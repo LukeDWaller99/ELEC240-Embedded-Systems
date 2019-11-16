@@ -4,6 +4,8 @@
 #include "PLL_Config.c"
 #include "delay.h"
 #include "LED.h"
+#include "LCD.h"
+#include "USART.h"
 
 int main(void)
 {
