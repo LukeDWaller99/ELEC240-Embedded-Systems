@@ -3,8 +3,18 @@
 												
 #include "PLL_Config.c"
 #include "delay.h"
+#include "LED.h"
 
 int main(void)
 {
+	PLL_Config();
+	SystemCoreClockUpdate();
 	
+	init_timer2();
+	init_all_LED();
+	
+	while (1)
+	{
+		__WFI();
+	}
 }
