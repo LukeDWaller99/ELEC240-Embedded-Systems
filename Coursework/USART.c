@@ -27,5 +27,31 @@ void init_USART (void)
 	USART_CR1_UE | 																														//usart main enable bit
 	USART_CR1_RXNEIE 																													//RXNE enable
 	);
-	
+	USART_MODULE->BRR= 0x187;																									//set the baud rate due to the calculations 
+
+}
+char USART_read (void)
+{
+	while (!(USART3->SR	&	0x00020)){}																					//read chararters written into the USART in the data register
+	return USART3->DR;
+}
+void send_USART (unsigned char d)
+{
+	while (!(USART_MODULE->SR	&	USART_SR_TC));																//write byte to the USART data register
+	USART_MODULE->DR=d;
+}
+void USART3_IRQHandler (void)
+{
+	char c = USART_read();
+	send_USART(c);
+	USART3->SR = 0x2000;
+}
+void USART_string (char *string)
+{
+	int string_length = strlen(string);																				//writes the length of the string to an integer
+	for( int i = 0; i<= string_length; i++)
+	{
+		char character = string[i];																							//writes the position of i in the string to the char character
+		send_USART(character);																									//sends the character to the send usart function that writes the character out in usart 
+	}
 }

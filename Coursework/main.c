@@ -6,17 +6,27 @@
 #include "LED.h"
 #include "LCD.h"
 #include "USART.h"
+#include "SWITCH.h"
+#include "init.h"
 
 int main(void)
 {
 	PLL_Config();
 	SystemCoreClockUpdate();
+
+//	init_USART();
+//	init_blue_switch();
+	init_LCD();
+	LCD_CLR();
+	cmd_LCD(LCD_LINE1);
+	decimal(1000);
 	
-	init_timer2();
-	init_all_LED();
+	
+//	NVIC->ISER[1] |= (1u << 8);				//interrupt for blue switch
+//	NVIC->ISER[1] |= (1u << 7);				//interupt for USART3 
 	
 	while (1)
 	{
-		__WFI();
+	__WFI();
 	}
 }
