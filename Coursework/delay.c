@@ -36,7 +36,16 @@ void init_timer4 (void)
 	NVIC->ISER[0]|=(1u<<30);						//timer 4 interrupt enabled
 	TIM4->CR1|=TIM_CR1_CEN;							//timer counter start
 }
-
+void init_timer5_10us (void)
+{
+	RCC->APB1ENR|=RCC_APB1ENR_TIM5EN;		//clock for timer 5 enabled
+	TIM5->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
+																			//the APB clock is FCY/2 = 180MHz/2 = 90MHz
+	TIM5->PSC=2-1;											//APB clock is divided by 2 = 90MHz/2 = 45MHz
+	TIM5->ARR=450;											//counter reload value, this sets the period of the timer to 10us when F_APB = 90MHz and the PSC = 256
+	TIM5->CNT=0;												//zero timer counter
+	NVIC->ISER[1]|=(1u<<14);						//timer 4 interrupt enabled
+}
 void TIM2_IRQHandler (void) 					//timer 2 interrupt routine
 {
 	TIM2->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
@@ -49,4 +58,8 @@ void TIM3_IRQHandler (void)						//timer 3 interrupt routine
 void TIM4_IRQHandler (void)						//timer 4 interrupt routine
 {
 	TIM4->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register 
+}
+void TIM5_IRQHandler (void)
+{
+	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
 }

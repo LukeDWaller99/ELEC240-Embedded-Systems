@@ -14,12 +14,11 @@ void init_blue_switch(void)
 	
 	EXTI->IMR 	|= 0x2000;													//unmasks EXTI13
 	EXTI->FTSR 	|= 0x2000;													//selects falling edge trigger for button
-	
 }
 
 void EXTI15_10_IRQHandler (void) 
 {
-	EXTI->PR = 0x2000;	
+	EXTI->PR |= 0x2000;	
 	send_USART('a');
 	toggle_green_LED();													//clear interrupt pending flag
 }

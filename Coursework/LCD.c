@@ -1,14 +1,15 @@
 #include "LCD.h"
 
-void lcd_delayus(unsigned int us)		//blocking delay for LCD, argument is approximate number of micro-seconds to delay
+void LCD_delay_us(unsigned int t)		//blocking delay for LCD, argument is approximate number of micro-seconds to delay
 {
-	unsigned char i;
-	while(us--)
+	TIM5->CR1|=TIM_CR1_CEN;				//timer counter start
+	int i;
+	while(t--)
 	{
-		for(i=0; i<SystemCoreClock/4000000; i++)
-
+		for(i=0; i<t; i++)
 		{
-		__NOP();}
+		
+		}
 	}
 }
 void wait_LCD_busy(void)
@@ -41,9 +42,9 @@ void set_LCD_data(unsigned char d, int val)
 
 void strobe_LCD(void)		//10us high pulse on LCD enable line
 {
-	lcd_delayus(10);
+	LCD_delay_us(10);
 	set_LCD_E();
-	lcd_delayus(10);
+	LCD_delay_us(10);
 	clr_LCD_E();
 }
 
@@ -159,7 +160,7 @@ void init_LCD(void)
 	clr_LCD_RW();
 	clr_LCD_E();
 	
-	lcd_delayus(5000);		//25ms startup delay
+	LCD_delay_us(5000);		//25ms startup delay
 	cmd_LCD(0x28);				//Function set: 2 Line, 4-bit, 5x7 dots
 	cmd_LCD(0x0F);				//Display on, Cursor blinking command
 	cmd_LCD(0x01);				//Clears the LCD

@@ -2,7 +2,7 @@
 
 void init_DAC (void)
 {
-		RCC->AHB1ENR|=RCC_AHB1ENR_GPIOAEN;		//enable the DAC port clock
+	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOAEN;			//enable the DAC port clock
 	DAC_port->MODER|=(3u<<(2*DAC_pin));			//set the DAC output pin as anaglogue
 	
 	RCC->APB1ENR|=RCC_APB1ENR_DACEN;				//enable the DAC clock

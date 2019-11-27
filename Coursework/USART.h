@@ -1,3 +1,6 @@
+#ifndef USART_H
+#define USART_H
+
 #include <stm32f4xx.h>
 
 #define USART_MODULE 		USART3
@@ -10,3 +13,5 @@ char USART_read 				(void);
 void send_USART 				(unsigned char d);
 void USART3_IRQHandler 	(void);
 void USART_string 			(char *string);
+
+#endif

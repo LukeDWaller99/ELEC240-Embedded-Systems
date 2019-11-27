@@ -15,5 +15,6 @@ void init_all_components (void)	//this is to set up all of the components needed
 	init_timer2();
 	init_timer3();
 	init_timer4();
+	init_timer5_10us();
 	init_ADC();
 }

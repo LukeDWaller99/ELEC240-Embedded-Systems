@@ -1,3 +1,6 @@
+#ifndef DAC_H
+#define DAC_H
+
 #include <stm32f4xx.h>
 
 #define DAC_port 	GPIOA
@@ -5,3 +8,5 @@
 
 void init_DAC (void);
 void output_DAC	(unsigned short d);
+
+#endif
