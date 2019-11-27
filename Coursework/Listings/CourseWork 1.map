@@ -5,11 +5,11 @@ Component: ARM Compiler 6.12 Tool: armlink [5d624300]
 Section Cross References
 
     main.o(.ARM.exidx.text.PLL_Config) refers to main.o(.text.PLL_Config) for [Anonymous Symbol]
-    main.o(.text.main) refers to main.o(.text.PLL_Config) for PLL_Config
-    main.o(.text.main) refers to system_stm32f4xx.o(.text.SystemCoreClockUpdate) for SystemCoreClockUpdate
     main.o(.text.main) refers to lcd.o(.text.init_LCD) for init_LCD
-    main.o(.text.main) refers to lcd.o(.text.cmd_LCD) for cmd_LCD
+    main.o(.text.main) refers to lcd.o(.text.LCD_setup) for LCD_setup
     main.o(.text.main) refers to lcd.o(.text.decimal) for decimal
+    main.o(.text.main) refers to lcd.o(.text.decimal_to_hex) for decimal_to_hex
+    main.o(.text.main) refers to lcd.o(.text.cmd_LCD) for cmd_LCD
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     delay.o(.ARM.exidx.text.init_timer2) refers to delay.o(.text.init_timer2) for [Anonymous Symbol]
     delay.o(.ARM.exidx.text.init_timer3) refers to delay.o(.text.init_timer3) for [Anonymous Symbol]
@@ -206,6 +206,7 @@ Section Cross References
 Removing Unused input sections from the image.
 
     Removing main.o(.text), (0 bytes).
+    Removing main.o(.text.PLL_Config), (108 bytes).
     Removing main.o(.ARM.exidx.text.PLL_Config), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
@@ -243,10 +244,8 @@ Removing Unused input sections from the image.
     Removing lcd.o(.ARM.exidx.text.cmd_LCD), (8 bytes).
     Removing lcd.o(.ARM.exidx.text.put_LCD), (8 bytes).
     Removing lcd.o(.ARM.exidx.text.decimal), (8 bytes).
-    Removing lcd.o(.text.decimal_to_hex), (104 bytes).
     Removing lcd.o(.ARM.exidx.text.decimal_to_hex), (8 bytes).
     Removing lcd.o(.ARM.exidx.text.init_LCD), (8 bytes).
-    Removing lcd.o(.text.LCD_setup), (36 bytes).
     Removing lcd.o(.ARM.exidx.text.LCD_setup), (8 bytes).
     Removing usart.o(.text), (0 bytes).
     Removing usart.o(.text.init_USART), (100 bytes).
@@ -278,7 +277,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f4xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_stm32f4xx.o(.rodata.APBPrescTable), (8 bytes).
 
-72 unused section(s) (total 1354 bytes) removed from the image.
+71 unused section(s) (total 1322 bytes) removed from the image.
 
 ==============================================================================
 
@@ -409,50 +408,48 @@ Image Symbol Table
     .text                                    0x08000306   Section        0  indicate_semi.o(.text)
     [Anonymous Symbol]                       0x08000308   Section        0  switch.o(.text.EXTI15_10_IRQHandler)
     __arm_cp.1_0                             0x08000320   Number         4  switch.o(.text.EXTI15_10_IRQHandler)
-    [Anonymous Symbol]                       0x08000324   Section        0  main.o(.text.PLL_Config)
-    __arm_cp.0_1                             0x08000384   Number         4  main.o(.text.PLL_Config)
-    __arm_cp.0_2                             0x08000388   Number         4  main.o(.text.PLL_Config)
-    [Anonymous Symbol]                       0x0800038c   Section        0  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    __arm_cp.1_0                             0x080003e4   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    __arm_cp.1_1                             0x080003e8   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    __arm_cp.1_2                             0x080003ec   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    __arm_cp.1_4                             0x080003f0   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    [Anonymous Symbol]                       0x080003f4   Section        0  system_stm32f4xx.o(.text.SystemInit)
-    __arm_cp.0_0                             0x08000430   Number         4  system_stm32f4xx.o(.text.SystemInit)
-    __arm_cp.0_1                             0x08000434   Number         4  system_stm32f4xx.o(.text.SystemInit)
-    __arm_cp.0_2                             0x08000438   Number         4  system_stm32f4xx.o(.text.SystemInit)
-    __arm_cp.0_3                             0x0800043c   Number         4  system_stm32f4xx.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x08000440   Section        0  delay.o(.text.TIM2_IRQHandler)
-    __arm_cp.3_0                             0x08000450   Number         4  delay.o(.text.TIM2_IRQHandler)
-    [Anonymous Symbol]                       0x08000454   Section        0  delay.o(.text.TIM3_IRQHandler)
-    __arm_cp.4_0                             0x08000460   Number         4  delay.o(.text.TIM3_IRQHandler)
-    [Anonymous Symbol]                       0x08000464   Section        0  delay.o(.text.TIM4_IRQHandler)
-    __arm_cp.5_0                             0x08000470   Number         4  delay.o(.text.TIM4_IRQHandler)
-    [Anonymous Symbol]                       0x08000474   Section        0  usart.o(.text.USART3_IRQHandler)
-    [Anonymous Symbol]                       0x08000488   Section        0  usart.o(.text.USART_read)
-    [Anonymous Symbol]                       0x08000498   Section        0  lcd.o(.text.cmd_LCD)
-    [Anonymous Symbol]                       0x080004dc   Section        0  lcd.o(.text.decimal)
-    [Anonymous Symbol]                       0x08000524   Section        0  lcd.o(.text.init_LCD)
-    __arm_cp.8_0                             0x08000578   Number         4  lcd.o(.text.init_LCD)
-    __arm_cp.8_2                             0x0800057c   Number         4  lcd.o(.text.init_LCD)
-    __arm_cp.8_3                             0x08000580   Number         4  lcd.o(.text.init_LCD)
-    __arm_cp.8_4                             0x08000584   Number         4  lcd.o(.text.init_LCD)
-    [Anonymous Symbol]                       0x08000588   Section        0  lcd.o(.text.lcd_delayus)
-    __arm_cp.0_0                             0x080005b0   Number         4  lcd.o(.text.lcd_delayus)
-    __arm_cp.0_1                             0x080005b4   Number         4  lcd.o(.text.lcd_delayus)
-    [Anonymous Symbol]                       0x080005b8   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x080005dc   Section        0  lcd.o(.text.put_LCD)
-    [Anonymous Symbol]                       0x08000620   Section        0  usart.o(.text.send_USART)
-    __arm_cp.2_0                             0x0800062c   Number         4  usart.o(.text.send_USART)
-    [Anonymous Symbol]                       0x08000630   Section        0  lcd.o(.text.strobe_LCD)
-    __arm_cp.3_0                             0x08000650   Number         4  lcd.o(.text.strobe_LCD)
-    [Anonymous Symbol]                       0x08000654   Section        0  led.o(.text.toggle_green_LED)
-    [Anonymous Symbol]                       0x08000660   Section        0  led.o(.text.toggle_red_LED)
-    __arm_cp.2_0                             0x0800066c   Number         4  led.o(.text.toggle_red_LED)
-    [Anonymous Symbol]                       0x08000670   Section        0  lcd.o(.text.wait_LCD_busy)
-    __arm_cp.1_0                             0x080006a8   Number         4  lcd.o(.text.wait_LCD_busy)
-    $v0                                      0x080006ac   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x080006ac   Section       26  fpinit.o(x$fpl$fpinit)
+    [Anonymous Symbol]                       0x08000324   Section        0  lcd.o(.text.LCD_setup)
+    __arm_cp.9_0                             0x08000344   Number         4  lcd.o(.text.LCD_setup)
+    [Anonymous Symbol]                       0x08000348   Section        0  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    __arm_cp.1_0                             0x080003a0   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    __arm_cp.1_1                             0x080003a4   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    __arm_cp.1_2                             0x080003a8   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    __arm_cp.1_4                             0x080003ac   Number         4  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x080003b0   Section        0  system_stm32f4xx.o(.text.SystemInit)
+    __arm_cp.0_0                             0x080003ec   Number         4  system_stm32f4xx.o(.text.SystemInit)
+    __arm_cp.0_1                             0x080003f0   Number         4  system_stm32f4xx.o(.text.SystemInit)
+    __arm_cp.0_2                             0x080003f4   Number         4  system_stm32f4xx.o(.text.SystemInit)
+    __arm_cp.0_3                             0x080003f8   Number         4  system_stm32f4xx.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x080003fc   Section        0  delay.o(.text.TIM2_IRQHandler)
+    __arm_cp.3_0                             0x0800040c   Number         4  delay.o(.text.TIM2_IRQHandler)
+    [Anonymous Symbol]                       0x08000410   Section        0  delay.o(.text.TIM3_IRQHandler)
+    __arm_cp.4_0                             0x0800041c   Number         4  delay.o(.text.TIM3_IRQHandler)
+    [Anonymous Symbol]                       0x08000420   Section        0  delay.o(.text.TIM4_IRQHandler)
+    __arm_cp.5_0                             0x0800042c   Number         4  delay.o(.text.TIM4_IRQHandler)
+    [Anonymous Symbol]                       0x08000430   Section        0  usart.o(.text.USART3_IRQHandler)
+    [Anonymous Symbol]                       0x08000444   Section        0  usart.o(.text.USART_read)
+    [Anonymous Symbol]                       0x08000454   Section        0  lcd.o(.text.cmd_LCD)
+    [Anonymous Symbol]                       0x08000498   Section        0  lcd.o(.text.decimal)
+    [Anonymous Symbol]                       0x080004e0   Section        0  lcd.o(.text.decimal_to_hex)
+    [Anonymous Symbol]                       0x08000548   Section        0  lcd.o(.text.init_LCD)
+    __arm_cp.8_0                             0x080005a0   Number         4  lcd.o(.text.init_LCD)
+    [Anonymous Symbol]                       0x080005a4   Section        0  lcd.o(.text.lcd_delayus)
+    __arm_cp.0_0                             0x080005cc   Number         4  lcd.o(.text.lcd_delayus)
+    __arm_cp.0_1                             0x080005d0   Number         4  lcd.o(.text.lcd_delayus)
+    [Anonymous Symbol]                       0x080005d4   Section        0  main.o(.text.main)
+    __arm_cp.1_0                             0x08000600   Number         4  main.o(.text.main)
+    [Anonymous Symbol]                       0x08000604   Section        0  lcd.o(.text.put_LCD)
+    [Anonymous Symbol]                       0x08000648   Section        0  usart.o(.text.send_USART)
+    __arm_cp.2_0                             0x08000654   Number         4  usart.o(.text.send_USART)
+    [Anonymous Symbol]                       0x08000658   Section        0  lcd.o(.text.strobe_LCD)
+    __arm_cp.3_0                             0x08000674   Number         4  lcd.o(.text.strobe_LCD)
+    [Anonymous Symbol]                       0x08000678   Section        0  led.o(.text.toggle_green_LED)
+    [Anonymous Symbol]                       0x08000684   Section        0  led.o(.text.toggle_red_LED)
+    __arm_cp.2_0                             0x08000690   Number         4  led.o(.text.toggle_red_LED)
+    [Anonymous Symbol]                       0x08000694   Section        0  lcd.o(.text.wait_LCD_busy)
+    __arm_cp.1_0                             0x080006c8   Number         4  lcd.o(.text.wait_LCD_busy)
+    $v0                                      0x080006cc   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x080006cc   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000008   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000068   Data         512  startup_stm32f429xx.o(HEAP)
     HEAP                                     0x20000068   Section      512  startup_stm32f429xx.o(HEAP)
@@ -653,31 +650,32 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x08000305   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x08000307   Thumb Code     0  indicate_semi.o(.text)
     EXTI15_10_IRQHandler                     0x08000309   Thumb Code    28  switch.o(.text.EXTI15_10_IRQHandler)
-    PLL_Config                               0x08000325   Thumb Code   108  main.o(.text.PLL_Config)
-    SystemCoreClockUpdate                    0x0800038d   Thumb Code   108  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
-    SystemInit                               0x080003f5   Thumb Code    76  system_stm32f4xx.o(.text.SystemInit)
-    TIM2_IRQHandler                          0x08000441   Thumb Code    20  delay.o(.text.TIM2_IRQHandler)
-    TIM3_IRQHandler                          0x08000455   Thumb Code    16  delay.o(.text.TIM3_IRQHandler)
-    TIM4_IRQHandler                          0x08000465   Thumb Code    16  delay.o(.text.TIM4_IRQHandler)
-    USART3_IRQHandler                        0x08000475   Thumb Code    24  usart.o(.text.USART3_IRQHandler)
-    USART_read                               0x08000489   Thumb Code    20  usart.o(.text.USART_read)
-    cmd_LCD                                  0x08000499   Thumb Code    72  lcd.o(.text.cmd_LCD)
-    decimal                                  0x080004dd   Thumb Code    72  lcd.o(.text.decimal)
-    init_LCD                                 0x08000525   Thumb Code   104  lcd.o(.text.init_LCD)
-    lcd_delayus                              0x08000589   Thumb Code    48  lcd.o(.text.lcd_delayus)
-    main                                     0x080005b9   Thumb Code    36  main.o(.text.main)
-    put_LCD                                  0x080005dd   Thumb Code    72  lcd.o(.text.put_LCD)
-    send_USART                               0x08000621   Thumb Code    16  usart.o(.text.send_USART)
-    strobe_LCD                               0x08000631   Thumb Code    36  lcd.o(.text.strobe_LCD)
-    toggle_green_LED                         0x08000655   Thumb Code    16  led.o(.text.toggle_green_LED)
-    toggle_red_LED                           0x08000661   Thumb Code    16  led.o(.text.toggle_red_LED)
-    wait_LCD_busy                            0x08000671   Thumb Code    60  lcd.o(.text.wait_LCD_busy)
-    _fp_init                                 0x080006ad   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080006c5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080006c5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    AHBPrescTable                            0x080006c6   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
-    Region$$Table$$Base                      0x080006d8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080006f8   Number         0  anon$$obj.o(Region$$Table)
+    LCD_setup                                0x08000325   Thumb Code    36  lcd.o(.text.LCD_setup)
+    SystemCoreClockUpdate                    0x08000349   Thumb Code   108  system_stm32f4xx.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x080003b1   Thumb Code    76  system_stm32f4xx.o(.text.SystemInit)
+    TIM2_IRQHandler                          0x080003fd   Thumb Code    20  delay.o(.text.TIM2_IRQHandler)
+    TIM3_IRQHandler                          0x08000411   Thumb Code    16  delay.o(.text.TIM3_IRQHandler)
+    TIM4_IRQHandler                          0x08000421   Thumb Code    16  delay.o(.text.TIM4_IRQHandler)
+    USART3_IRQHandler                        0x08000431   Thumb Code    24  usart.o(.text.USART3_IRQHandler)
+    USART_read                               0x08000445   Thumb Code    20  usart.o(.text.USART_read)
+    cmd_LCD                                  0x08000455   Thumb Code    72  lcd.o(.text.cmd_LCD)
+    decimal                                  0x08000499   Thumb Code    72  lcd.o(.text.decimal)
+    decimal_to_hex                           0x080004e1   Thumb Code   104  lcd.o(.text.decimal_to_hex)
+    init_LCD                                 0x08000549   Thumb Code   100  lcd.o(.text.init_LCD)
+    lcd_delayus                              0x080005a5   Thumb Code    48  lcd.o(.text.lcd_delayus)
+    main                                     0x080005d5   Thumb Code    48  main.o(.text.main)
+    put_LCD                                  0x08000605   Thumb Code    72  lcd.o(.text.put_LCD)
+    send_USART                               0x08000649   Thumb Code    16  usart.o(.text.send_USART)
+    strobe_LCD                               0x08000659   Thumb Code    32  lcd.o(.text.strobe_LCD)
+    toggle_green_LED                         0x08000679   Thumb Code    16  led.o(.text.toggle_green_LED)
+    toggle_red_LED                           0x08000685   Thumb Code    16  led.o(.text.toggle_red_LED)
+    wait_LCD_busy                            0x08000695   Thumb Code    56  lcd.o(.text.wait_LCD_busy)
+    _fp_init                                 0x080006cd   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x080006e5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x080006e5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x080006e6   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
+    Region$$Table$$Base                      0x080006f8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000718   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx.o(.data.SystemCoreClock)
     __libspace_start                         0x20000008   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000068   Data           0  libspace.o(.bss)
@@ -690,9 +688,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001ad
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000700, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000720, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000006f8, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000718, Max: 0x00200000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -755,37 +753,38 @@ Memory Map of the image
     0x08000306   0x08000306   0x00000000   Code   RO          288    .text               c_w.l(indicate_semi.o)
     0x08000306   0x08000306   0x00000002   PAD
     0x08000308   0x08000308   0x0000001c   Code   RO          109    .text.EXTI15_10_IRQHandler  switch.o
-    0x08000324   0x08000324   0x00000068   Code   RO            2    .text.PLL_Config    main.o
-    0x0800038c   0x0800038c   0x00000068   Code   RO          163    .text.SystemCoreClockUpdate  system_stm32f4xx.o
-    0x080003f4   0x080003f4   0x0000004c   Code   RO          161    .text.SystemInit    system_stm32f4xx.o
-    0x08000440   0x08000440   0x00000014   Code   RO           21    .text.TIM2_IRQHandler  delay.o
-    0x08000454   0x08000454   0x00000010   Code   RO           23    .text.TIM3_IRQHandler  delay.o
-    0x08000464   0x08000464   0x00000010   Code   RO           25    .text.TIM4_IRQHandler  delay.o
-    0x08000474   0x08000474   0x00000014   Code   RO           94    .text.USART3_IRQHandler  usart.o
-    0x08000488   0x08000488   0x00000010   Code   RO           90    .text.USART_read    usart.o
-    0x08000498   0x08000498   0x00000044   Code   RO           67    .text.cmd_LCD       lcd.o
-    0x080004dc   0x080004dc   0x00000048   Code   RO           71    .text.decimal       lcd.o
-    0x08000524   0x08000524   0x00000064   Code   RO           75    .text.init_LCD      lcd.o
-    0x08000588   0x08000588   0x00000030   Code   RO           59    .text.lcd_delayus   lcd.o
-    0x080005b8   0x080005b8   0x00000024   Code   RO            4    .text.main          main.o
-    0x080005dc   0x080005dc   0x00000044   Code   RO           69    .text.put_LCD       lcd.o
-    0x08000620   0x08000620   0x00000010   Code   RO           92    .text.send_USART    usart.o
-    0x08000630   0x08000630   0x00000024   Code   RO           65    .text.strobe_LCD    lcd.o
-    0x08000654   0x08000654   0x0000000c   Code   RO           37    .text.toggle_green_LED  led.o
-    0x08000660   0x08000660   0x00000010   Code   RO           39    .text.toggle_red_LED  led.o
-    0x08000670   0x08000670   0x0000003c   Code   RO           61    .text.wait_LCD_busy  lcd.o
-    0x080006ac   0x080006ac   0x0000001a   Code   RO          269    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080006c6   0x080006c6   0x00000010   Data   RO          166    .rodata.AHBPrescTable  system_stm32f4xx.o
-    0x080006d6   0x080006d6   0x00000002   PAD
-    0x080006d8   0x080006d8   0x00000020   Data   RO          344    Region$$Table       anon$$obj.o
+    0x08000324   0x08000324   0x00000024   Code   RO           77    .text.LCD_setup     lcd.o
+    0x08000348   0x08000348   0x00000068   Code   RO          163    .text.SystemCoreClockUpdate  system_stm32f4xx.o
+    0x080003b0   0x080003b0   0x0000004c   Code   RO          161    .text.SystemInit    system_stm32f4xx.o
+    0x080003fc   0x080003fc   0x00000014   Code   RO           21    .text.TIM2_IRQHandler  delay.o
+    0x08000410   0x08000410   0x00000010   Code   RO           23    .text.TIM3_IRQHandler  delay.o
+    0x08000420   0x08000420   0x00000010   Code   RO           25    .text.TIM4_IRQHandler  delay.o
+    0x08000430   0x08000430   0x00000014   Code   RO           94    .text.USART3_IRQHandler  usart.o
+    0x08000444   0x08000444   0x00000010   Code   RO           90    .text.USART_read    usart.o
+    0x08000454   0x08000454   0x00000044   Code   RO           67    .text.cmd_LCD       lcd.o
+    0x08000498   0x08000498   0x00000048   Code   RO           71    .text.decimal       lcd.o
+    0x080004e0   0x080004e0   0x00000068   Code   RO           73    .text.decimal_to_hex  lcd.o
+    0x08000548   0x08000548   0x0000005c   Code   RO           75    .text.init_LCD      lcd.o
+    0x080005a4   0x080005a4   0x00000030   Code   RO           59    .text.lcd_delayus   lcd.o
+    0x080005d4   0x080005d4   0x00000030   Code   RO            4    .text.main          main.o
+    0x08000604   0x08000604   0x00000044   Code   RO           69    .text.put_LCD       lcd.o
+    0x08000648   0x08000648   0x00000010   Code   RO           92    .text.send_USART    usart.o
+    0x08000658   0x08000658   0x00000020   Code   RO           65    .text.strobe_LCD    lcd.o
+    0x08000678   0x08000678   0x0000000c   Code   RO           37    .text.toggle_green_LED  led.o
+    0x08000684   0x08000684   0x00000010   Code   RO           39    .text.toggle_red_LED  led.o
+    0x08000694   0x08000694   0x00000038   Code   RO           61    .text.wait_LCD_busy  lcd.o
+    0x080006cc   0x080006cc   0x0000001a   Code   RO          269    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x080006e6   0x080006e6   0x00000010   Data   RO          166    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x080006f6   0x080006f6   0x00000002   PAD
+    0x080006f8   0x080006f8   0x00000020   Data   RO          344    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080006f8, Size: 0x00000668, Max: 0x00030000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000718, Size: 0x00000668, Max: 0x00030000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080006f8   0x00000004   Data   RW          165    .data.SystemCoreClock  system_stm32f4xx.o
-    0x20000004   0x080006fc   0x00000004   PAD
+    0x20000000   0x08000718   0x00000004   Data   RW          165    .data.SystemCoreClock  system_stm32f4xx.o
+    0x20000004   0x0800071c   0x00000004   PAD
     0x20000008        -       0x00000060   Zero   RW          211    .bss                c_w.l(libspace.o)
     0x20000068        -       0x00000200   Zero   RW          152    HEAP                startup_stm32f429xx.o
     0x20000268        -       0x00000400   Zero   RW          151    STACK               startup_stm32f429xx.o
@@ -799,16 +798,16 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         52         12          0          0          0       2797   delay.o
-       452         32          0          0          0       4119   lcd.o
+       576         30          0          0          0       4119   lcd.o
         28          4          0          0          0       2325   led.o
-       140          8          0          0          0       1868   main.o
+        48          4          0          0          0       1873   main.o
         64         26        428          0       1536        948   startup_stm32f429xx.o
         28          4          0          0          0       2093   switch.o
        180         32         16          4          0       2795   system_stm32f4xx.o
         52          4          0          0          0       2723   usart.o
 
     ----------------------------------------------------------------------
-       996        122        478          4       1540      19668   Object Totals
+      1028        116        478          4       1540      19673   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          2          0          4          0   (incl. Padding)
 
@@ -859,15 +858,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1306        138        478          4       1636      20116   Grand Totals
-      1306        138        478          4       1636      20116   ELF Image Totals
-      1306        138        478          4          0          0   ROM Totals
+      1338        132        478          4       1636      20121   Grand Totals
+      1338        132        478          4       1636      20121   ELF Image Totals
+      1338        132        478          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1784 (   1.74kB)
+    Total RO  Size (Code + RO Data)                 1816 (   1.77kB)
     Total RW  Size (RW Data + ZI Data)              1640 (   1.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       1788 (   1.75kB)
+    Total ROM Size (Code + RO Data + RW Data)       1820 (   1.78kB)
 
 ==============================================================================
 

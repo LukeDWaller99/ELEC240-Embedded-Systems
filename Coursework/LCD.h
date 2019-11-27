@@ -1,8 +1,8 @@
 #include <stm32f4xx.h>
 #define LCD_PORT	GPIOD
-#define LCD_RS_pin	11
-#define LCD_RW_pin	12
-#define LCD_E_pin		13
+#define LCD_RS_pin	2		//set up to avoid using the pins that are covered by the FPGA board
+#define LCD_RW_pin	0
+#define LCD_E_pin		1
 
 #define LCD_D0_pin	0
 
