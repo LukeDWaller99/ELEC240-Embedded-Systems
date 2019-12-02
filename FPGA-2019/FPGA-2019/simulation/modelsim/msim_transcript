@@ -1,0 +1,179 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Template_2019_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:01:37 on Nov 19,2019
+# vcom -reportprogress 300 -93 -work work C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MyClockDivider
+# -- Compiling architecture v1 of MyClockDivider
+# End time: 14:01:38 on Nov 19,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.myclockdivider
+# vsim work.myclockdivider 
+# Start time: 14:02:06 on Nov 19,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.myclockdivider(v1)
+add wave -position insertpoint  \
+sim:/myclockdivider/CLK \
+sim:/myclockdivider/Y \
+sim:/myclockdivider/op
+force -freeze sim:/myclockdivider/CLK 1 0, 0 {5000 ps} -r {10 ns}
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 14:03:05 on Nov 19,2019, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:21 on Nov 19,2019
+# vcom -reportprogress 300 -93 -work work C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MyClockDivider
+# -- Compiling architecture v1 of MyClockDivider
+# End time: 14:03:21 on Nov 19,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.myclockdivider
+# vsim work.myclockdivider 
+# Start time: 14:03:26 on Nov 19,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.myclockdivider(v1)
+add wave -position insertpoint  \
+sim:/myclockdivider/CLK \
+sim:/myclockdivider/Y \
+sim:/myclockdivider/op
+force -freeze sim:/myclockdivider/CLK 1 0, 0 {5000 ps} -r {10 ns}
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 32
+step -over
+step -over
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 36
+# Break key hit
+quit -sim
+# End time: 14:05:04 on Nov 19,2019, Elapsed time: 0:01:38
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:05:06 on Nov 19,2019
+# vcom -reportprogress 300 -93 -work work C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MyClockDivider
+# -- Compiling architecture v1 of MyClockDivider
+# End time: 14:05:07 on Nov 19,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.myclockdivider
+# vsim work.myclockdivider 
+# Start time: 14:05:18 on Nov 19,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.myclockdivider(v1)
+add wave -position insertpoint  \
+sim:/myclockdivider/CLK \
+sim:/myclockdivider/Y \
+sim:/myclockdivider/op
+force -freeze sim:/myclockdivider/CLK 1 0, 0 {5000 ps} -r {10 ns}
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 36
+step -over
+step -over
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 36
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 36
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 36
+run
+run
+run
+run
+run
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 38
+step -over
+step -over
+step -over
+step -over
+# Next activity is in 5 ns.
+step -over
+step -over
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break in Process line__32 at C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd line 38
+run
+run
+run
+# Break key hit
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 14:08:15 on Nov 19,2019, Elapsed time: 0:02:57
+# Errors: 0, Warnings: 0

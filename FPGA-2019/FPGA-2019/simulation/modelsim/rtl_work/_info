@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/git/ELEC240/Coursework/FPGA-2019/simulation/modelsim
+Emyclockdivider
+Z1 w1574172297
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd
+Z6 FC:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd
+l0
+L5
+VS4ITJhTL5]`R6hZcZnP212
+!s100 [heK<73<M92l1fROVOloY0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1574172306
+!i10b 1
+Z9 !s108 1574172306.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd|
+Z11 !s107 C:/git/ELEC240/Coursework/FPGA-2019/MyClockDivider.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Av1
+R2
+R3
+R4
+Z14 DEx4 work 14 myclockdivider 0 22 S4ITJhTL5]`R6hZcZnP212
+l30
+L25
+VM]W6Q7zVLFec4aNz6b17D1
+!s100 o[2M;j8?HmBWWCKC4`JOm0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

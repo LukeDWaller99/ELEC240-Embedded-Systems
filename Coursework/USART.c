@@ -32,8 +32,8 @@ void init_USART (void)
 }
 char USART_read (void)
 {
-	while (!(USART3->SR	&	0x00020)){}																					//read chararters written into the USART in the data register
-	return USART3->DR;
+	while (!(USART_MODULE->SR	&	0x00020)){}																		//read chararters written into the USART in the data register
+	return USART_MODULE->DR;
 }
 void send_USART (unsigned char d)
 {
