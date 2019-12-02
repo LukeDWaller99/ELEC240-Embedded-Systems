@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 288 56 312))
+	(annotation_block (location)(rect 0 264 56 288))
 )
 (pin
 	(input)
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 320 56 344))
+	(annotation_block (location)(rect 0 296 56 320))
 )
 (pin
 	(input)
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 352 56 376))
+	(annotation_block (location)(rect 0 328 56 352))
 )
 (pin
 	(input)
@@ -86,7 +86,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -8 504 48 528))
+	(annotation_block (location)(rect -8 480 48 504))
 )
 (pin
 	(input)
@@ -103,7 +103,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 384 56 408))
+	(annotation_block (location)(rect 0 360 56 384))
 )
 (pin
 	(input)
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -8 160 56 184))
+	(annotation_block (location)(rect -8 136 56 160))
 )
 (pin
 	(input)
@@ -137,13 +137,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 192 56 216))
+	(annotation_block (location)(rect 0 168 56 192))
 )
 (pin
 	(input)
 	(rect 56 208 224 224)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SEL[0]" (rect 5 0 39 12)(font "Arial" ))
+	(text "SEL[0]" (rect 5 0 38 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -154,13 +154,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "GND" (rect 128 7 149 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 224 56 248))
+	(annotation_block (location)(rect 0 200 56 224))
 )
 (pin
 	(input)
 	(rect 56 240 224 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SEL[1]" (rect 5 0 36 17)(font "Intel Clear" ))
+	(text "SEL[1]" (rect 5 0 35 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -171,7 +171,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "GND" (rect 128 7 149 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 0 256 56 280))
+	(annotation_block (location)(rect 0 232 56 256))
 )
 (pin
 	(output)
@@ -420,73 +420,12 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (connector
-	(pt 224 496)
-	(pt 288 496)
-)
-(connector
-	(pt 224 312)
-	(pt 656 312)
-)
-(connector
-	(pt 224 344)
-	(pt 656 344)
-)
-(connector
-	(pt 224 280)
-	(pt 656 280)
-)
-(connector
-	(pt 224 248)
-	(pt 656 248)
-)
-(connector
-	(pt 224 216)
-	(pt 656 216)
-)
-(connector
-	(pt 224 376)
-	(pt 656 376)
-)
-(connector
-	(pt 632 408)
-	(pt 656 408)
-)
-(connector
-	(pt 632 496)
-	(pt 632 408)
-)
-(connector
-	(pt 472 160)
-	(pt 544 160)
-)
-(connector
-	(pt 656 184)
-	(pt 544 184)
-)
-(connector
-	(pt 544 184)
-	(pt 544 160)
-)
-(connector
-	(pt 272 152)
+	(pt 400 152)
 	(pt 408 152)
 )
 (connector
-	(pt 272 184)
-	(pt 376 184)
-)
-(connector
-	(pt 376 184)
-	(pt 376 168)
-)
-(connector
-	(pt 376 168)
+	(pt 400 168)
 	(pt 408 168)
-)
-(connector
-	(text "clk_1Hz" (rect 426 480 463 497)(font "Intel Clear" ))
-	(pt 416 496)
-	(pt 632 496)
 )
 (text "Press KEY1 to latch the value of KEY0" (rect 128 104 351 123)(font "Intel Clear" (font_size 8)))
 (text "This is a 1Hz clock output" (rect 464 512 615 531)(font "Intel Clear" (font_size 8)))

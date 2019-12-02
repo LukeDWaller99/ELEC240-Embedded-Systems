@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity LED_latch is
+
+	port
+	(
+		--input ports
+		Latch 	: in std_logic;	--input for the latch
+		input1	: in std_logic;	--input for LEDs
+		input1	: in std_logic;
+		input3	: in std_logic;
+		input4	: in std_logic;
+		
+		--output ports 
+		LED1	: out std_logic;
+		LED2	: out std_logic;
+		LED3	: out std_logic;	
+		LED4	: out std_logic
+	);
+end LED_latch;
+
+architecture LED_latch of LED_latch is
+
+begin 
+

@@ -1,0 +1,57 @@
+|Template_2019
+LED[0] <= <GND>
+LED[1] <= <GND>
+LED[2] <= <GND>
+LED[3] <= <GND>
+LED[4] <= <GND>
+LED[5] <= <GND>
+LED[6] <= <GND>
+LED[7] <= <GND>
+CLOCK_50Mhz => ~NO_FANOUT~
+DATA4[0] => ~NO_FANOUT~
+DATA4[1] => ~NO_FANOUT~
+DATA4[2] => ~NO_FANOUT~
+DATA4[3] => ~NO_FANOUT~
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+SEL[0] => ~NO_FANOUT~
+SEL[1] => ~NO_FANOUT~
+
+
+|Template_2019|MyClockDivider:inst
+CLK => op.CLK
+CLK => counter[0].CLK
+CLK => counter[1].CLK
+CLK => counter[2].CLK
+CLK => counter[3].CLK
+CLK => counter[4].CLK
+CLK => counter[5].CLK
+CLK => counter[6].CLK
+CLK => counter[7].CLK
+CLK => counter[8].CLK
+CLK => counter[9].CLK
+CLK => counter[10].CLK
+CLK => counter[11].CLK
+CLK => counter[12].CLK
+CLK => counter[13].CLK
+CLK => counter[14].CLK
+CLK => counter[15].CLK
+CLK => counter[16].CLK
+CLK => counter[17].CLK
+CLK => counter[18].CLK
+CLK => counter[19].CLK
+CLK => counter[20].CLK
+CLK => counter[21].CLK
+CLK => counter[22].CLK
+CLK => counter[23].CLK
+CLK => counter[24].CLK
+CLK => counter[25].CLK
+CLK => counter[26].CLK
+CLK => counter[27].CLK
+CLK => counter[28].CLK
+CLK => counter[29].CLK
+CLK => counter[30].CLK
+CLK => counter[31].CLK
+Y <= op.DB_MAX_OUTPUT_PORT_TYPE
+
+
