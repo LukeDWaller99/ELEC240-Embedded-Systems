@@ -10,8 +10,8 @@
 
 int main(void)
 {
-	PLL_Config();
-	SystemCoreClockUpdate();
+//	PLL_Config();
+//	SystemCoreClockUpdate();
 
 //	init_USART();
 //	init_blue_switch();

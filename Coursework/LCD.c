@@ -38,9 +38,9 @@ void set_LCD_data(unsigned char d, int val)
 
 void strobe_LCD(void)		//10us high pulse on LCD enable line
 {
-	LCD_delay_us(113);
+	LCD_delay_us(10);
 	set_LCD_E();
-	LCD_delay_us(113);
+	LCD_delay_us(10);
 	clr_LCD_E();
 }
 
@@ -156,7 +156,7 @@ void init_LCD(void)
 	clr_LCD_RW();
 	clr_LCD_E();
 	
-	LCD_delay_us(56000);		//25ms startup delay
+	LCD_delay_us(5000);		//25ms startup delay
 	cmd_LCD(0x28);				//Function set: 2 Line, 4-bit, 5x7 dots
 	cmd_LCD(0x0F);				//Display on, Cursor blinking command
 	cmd_LCD(0x01);				//Clears the LCD

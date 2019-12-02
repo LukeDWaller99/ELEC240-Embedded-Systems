@@ -4,24 +4,24 @@ void init_all_LED (void)
 {
 																					//this void is used to setup all of the LED pins instead of using seperate voids for each LED
 																					//because there are so many LEDs to set up this saves on space when initialising in the main
-		//enable port s
+		//enable ports
 	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOBEN;			//GPIO B clock enabled
 	
 	//configure port pin functions for the onboard green LED
-	GPIOB->MODER&=~(3u<<(2*0));							//clear pin functions on GPIOB - green LED
-	GPIOB->MODER|=(1u<<(2*0));							//set new pin fuctions on GPIOB - green LED
+	GPIOB->MODER&=~	(3u<<(2*0));							//clear pin functions on GPIOB - green LED
+	GPIOB->MODER|=	(1u<<(2*0));							//set new pin fuctions on GPIOB - green LED
 	
 		//configure port pin functions for the onboard red LED
-	GPIOB->MODER&=~(3u<<(2*14));						//clear pin functions on GPIOB - red LED
-	GPIOB->MODER|= (1u<<(2*14));						//set new pin functions on GPIOB - red LED
+	GPIOB->MODER&=~	(3u<<(2*14));						//clear pin functions on GPIOB - red LED
+	GPIOB->MODER|= 	(1u<<(2*14));						//set new pin functions on GPIOB - red LED
 	
 		//configure port pin functions for the onboard blue LED
-	GPIOB->MODER&=~(3u<<(2*7));						//clear pin functions on GPIOB - blue LED
-	GPIOB->MODER|= (1u<<(2*7));						//set new pin functions on GPIOB - blue LED
+	GPIOB->MODER&=~	(3u<<(2*7));						//clear pin functions on GPIOB - blue LED
+	GPIOB->MODER|= 	(1u<<(2*7));						//set new pin functions on GPIOB - blue LED
 	
 		//configure port pin functions for external LED1
-	GPIOB->MODER&=~(3u<<(2*8));						//clear pin functions on GPIOB - external LED1
-	GPIOB->MODER|=(1u<<(2*8));						//set new pin functions on GPIOB - external LED1
+	GPIOB->MODER&=~	(3u<<(2*8));						//clear pin functions on GPIOB - external LED1
+	GPIOB->MODER|=	(1u<<(2*8));						//set new pin functions on GPIOB - external LED1
 	
 		//configure port pin functions for external LED2
 	GPIOB->MODER&=~(3u<<(2*10));					//clear pin functions on GPIOB - external LED2
