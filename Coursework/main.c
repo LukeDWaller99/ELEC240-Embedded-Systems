@@ -13,12 +13,12 @@ int main(void)
 {
 	PLL_Config();
 	SystemCoreClockUpdate();
-
 	init_USART();
 	init_blue_switch();
 	init_DAC();
 	init_all_LED();
 	init_timer2();
+	init_timer3();
 //	init_LCD();
 //	LCD_CLR();
 //	LCD_setup(); 
@@ -34,7 +34,8 @@ int main(void)
 	while (1)
 	{
 //		sine_wave();
-//		triangle_wave();
-		square_wave();
+		triangle_wave();
+//		square_wave();
+//		__WFI();
 	}
 }

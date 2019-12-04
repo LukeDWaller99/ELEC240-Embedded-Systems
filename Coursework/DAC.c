@@ -3,36 +3,36 @@
 
 void init_DAC (void)
 {
-	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOAEN;			//enable the DAC port clock
-	DAC_port->MODER|=(3u<<(2*DAC_pin));			//set the DAC output pin as anaglogue
+	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOAEN;				//enable the DAC port clock
+	DAC_port->MODER|=(3u<<(2*DAC_pin));				//set the DAC output pin as anaglogue
 	
-	RCC->APB1ENR|=RCC_APB1ENR_DACEN;				//enable the DAC clock
-	DAC->CR|=DAC_CR_EN2;										//enable DAC 2 
+	RCC->APB1ENR|=RCC_APB1ENR_DACEN;					//enable the DAC clock
+	DAC->CR|=DAC_CR_EN2;											//enable DAC 2 
 }
 void output_DAC (unsigned short d)
 {
-	DAC->DHR12R2=d;													//wite the data byte to the DAC 2 output register
+	DAC->DHR12R2=d;														//wite the data byte to the DAC 2 output register
 }
 
 void DC_output (void)
 {
-	output_DAC(0xFFFF);											//outputs a DC value to the DAC
+	output_DAC(0xFFFF);												//outputs a DC value to the DAC
 }
-void triangle_wave (void)									//Generates a sawtooth wave 
+void triangle_wave (void)										//Generates a triangular wave 
 {
 	float i;
-	for (i=0; i<=0xFFF; i = i+2)						//triangle starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
+	for (i=0; i<=0xFFF; i = i+2)							//triangle starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
 	{
-		output_DAC(i);												//outputs the value of i to the DAC
+		output_DAC(i);													//outputs the value of i to the DAC
 	}
-	for (i=0xFFF; i>=0; i = i-2)						//traingle starts at 0xFFF, goes to 0, increamenting the count by 1 each time
+	for (i=0xFFF; i>=0; i = i-2)							//traingle starts at 0xFFF, goes to 0, increamenting the count by 1 each time
 	{
-		output_DAC(i);												//outputs the value of i to the DAC
+		output_DAC(i);													//outputs the value of i to the DAC
 	}
 }
-void sine_wave (void)
+void sine_wave (void)												//generates a sine wave
 {
-	unsigned long sineWave[WAVEFORM_LENGTH];
+	unsigned long sineWave[WAVEFORM_LENGTH];	
 	unsigned long i;
 	double Radians;
 	const double M_PI = 3.1415926535897;
@@ -44,7 +44,7 @@ void sine_wave (void)
 		output_DAC(sineWave[i]);
 	}
 }
-void square_wave (void)
+void square_wave (void)	//generates a square wave
 {
 	short i;
 	for (i=1; i<=0xFFF; i = i +4 )
