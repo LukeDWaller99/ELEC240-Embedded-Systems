@@ -1,21 +1,55 @@
 |Template_2019
-LED[0] <= <GND>
-LED[1] <= <GND>
-LED[2] <= <GND>
-LED[3] <= <GND>
-LED[4] <= <GND>
-LED[5] <= <GND>
-LED[6] <= <GND>
-LED[7] <= <GND>
+LED[0] <= LED_latch:inst4.LED1
+LED[1] <= LED_latch:inst4.LED2
+LED[2] <= LED_latch:inst4.LED3
+LED[3] <= LED_latch:inst4.LED4
+LED[4] <= LED_latch:inst5.LED1
+LED[5] <= LED_latch:inst5.LED2
+LED[6] <= LED_latch:inst5.LED3
+LED[7] <= LED_latch:inst5.LED4
+SEL[0] => LED_latch:inst4.latch
+SEL[1] => LED_latch:inst5.latch
+DATA4[0] => LED_latch:inst4.input1
+DATA4[0] => LED_latch:inst5.input1
+DATA4[1] => LED_latch:inst4.input2
+DATA4[1] => LED_latch:inst5.input2
+DATA4[2] => LED_latch:inst4.input3
+DATA4[2] => LED_latch:inst5.input3
+DATA4[3] => LED_latch:inst4.input4
+DATA4[3] => LED_latch:inst5.input4
 CLOCK_50Mhz => ~NO_FANOUT~
-DATA4[0] => ~NO_FANOUT~
-DATA4[1] => ~NO_FANOUT~
-DATA4[2] => ~NO_FANOUT~
-DATA4[3] => ~NO_FANOUT~
 KEY[0] => ~NO_FANOUT~
 KEY[1] => ~NO_FANOUT~
-SEL[0] => ~NO_FANOUT~
-SEL[1] => ~NO_FANOUT~
+
+
+|Template_2019|LED_latch:inst4
+latch => LED4~reg0.CLK
+latch => LED3~reg0.CLK
+latch => LED2~reg0.CLK
+latch => LED1~reg0.CLK
+input1 => LED1~reg0.DATAIN
+input2 => LED2~reg0.DATAIN
+input3 => LED3~reg0.DATAIN
+input4 => LED4~reg0.DATAIN
+LED1 <= LED1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED2 <= LED2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED3 <= LED3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED4 <= LED4~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Template_2019|LED_latch:inst5
+latch => LED4~reg0.CLK
+latch => LED3~reg0.CLK
+latch => LED2~reg0.CLK
+latch => LED1~reg0.CLK
+input1 => LED1~reg0.DATAIN
+input2 => LED2~reg0.DATAIN
+input3 => LED3~reg0.DATAIN
+input4 => LED4~reg0.DATAIN
+LED1 <= LED1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED2 <= LED2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED3 <= LED3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED4 <= LED4~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Template_2019|MyClockDivider:inst

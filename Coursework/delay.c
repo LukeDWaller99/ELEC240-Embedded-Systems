@@ -9,7 +9,7 @@ void init_timer2 (void)
 	TIM2->PSC=256-1;										//APB clock divided by 256 = 90MHz/256 = 351KHz
 	TIM2->ARR=73230;										//counter reload value, this sets the period of the timer to 208ms when F_APB =90MHz and PSC = 256
 	TIM2->CNT=0;												//zero timer counter 
-	NVIC->ISER[0]|=(1u<<28);						//timer 2 interrupt enabled
+  
 	TIM2->CR1|=TIM_CR1_CEN;							//timer counter start
 }
 

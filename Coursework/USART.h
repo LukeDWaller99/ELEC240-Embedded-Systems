@@ -11,7 +11,6 @@
 void init_USART 				(void);
 char USART_read 				(void);
 void send_USART 				(unsigned char d);
-void USART3_IRQHandler 	(void);
 void USART_string 			(char *string);
 
 #endif

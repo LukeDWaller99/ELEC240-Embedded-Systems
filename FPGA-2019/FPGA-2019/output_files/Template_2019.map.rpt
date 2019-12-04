@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Template_2019
-Mon Dec 02 16:43:32 2019
+Wed Dec 04 13:26:12 2019
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Standard Edition
 
 
@@ -56,15 +56,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 02 16:43:32 2019           ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 04 13:26:12 2019           ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Standard Edition ;
 ; Revision Name                      ; Template_2019                                   ;
 ; Top-level Entity Name              ; Template_2019                                   ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 706                                             ;
-;     Total combinational functions  ; 513                                             ;
-;     Dedicated logic registers      ; 513                                             ;
-; Total registers                    ; 513                                             ;
+; Total logic elements               ; 714                                             ;
+;     Total combinational functions  ; 512                                             ;
+;     Dedicated logic registers      ; 521                                             ;
+; Total registers                    ; 521                                             ;
 ; Total pins                         ; 17                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 32,768                                          ;
@@ -182,6 +182,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 ; Template_2019.bdf                                                  ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Template_2019.bdf                                                  ;             ;
 ; MyClockDivider.vhd                                                 ; yes             ; User VHDL File                               ; C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/MyClockDivider.vhd                                                 ;             ;
+; LED_latch.vhd                                                      ; yes             ; User VHDL File                               ; C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/LED_latch.vhd                                                      ;             ;
 ; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/sld_signaltap.vhd                                                                                                                             ;             ;
 ; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                                                                                                        ;             ;
 ; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/18.1/quartus/libraries/megafunctions/sld_ela_control.vhd                                                                                                                           ;             ;
@@ -249,20 +250,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 706                      ;
+; Estimated Total logic elements              ; 714                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 513                      ;
+; Total combinational functions               ; 512                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
 ;     -- 4 input functions                    ; 186                      ;
 ;     -- 3 input functions                    ; 167                      ;
-;     -- <=2 input functions                  ; 160                      ;
+;     -- <=2 input functions                  ; 159                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 415                      ;
+;     -- normal mode                          ; 414                      ;
 ;     -- arithmetic mode                      ; 98                       ;
 ;                                             ;                          ;
-; Total registers                             ; 513                      ;
-;     -- Dedicated logic registers            ; 513                      ;
+; Total registers                             ; 521                      ;
+;     -- Dedicated logic registers            ; 521                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 17                       ;
@@ -272,7 +273,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 351                      ;
-; Total fan-out                               ; 3419                     ;
+; Total fan-out                               ; 3443                     ;
 ; Average fan-out                             ; 3.19                     ;
 +---------------------------------------------+--------------------------+
 
@@ -282,7 +283,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                      ; Entity Name                                        ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+--------------+
-; |Template_2019                                                                                                                          ; 513 (2)             ; 513 (0)                   ; 32768       ; 0            ; 0       ; 0         ; 17   ; 0            ; |Template_2019                                                                                                                                                                                                                                                                                                                                                                                           ; Template_2019                                      ; work         ;
+; |Template_2019                                                                                                                          ; 512 (1)             ; 521 (0)                   ; 32768       ; 0            ; 0       ; 0         ; 17   ; 0            ; |Template_2019                                                                                                                                                                                                                                                                                                                                                                                           ; Template_2019                                      ; work         ;
+;    |LED_latch:inst4|                                                                                                                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template_2019|LED_latch:inst4                                                                                                                                                                                                                                                                                                                                                                           ; LED_latch                                          ; work         ;
+;    |LED_latch:inst5|                                                                                                                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template_2019|LED_latch:inst5                                                                                                                                                                                                                                                                                                                                                                           ; LED_latch                                          ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 123 (1)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template_2019|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                                                                          ; sld_hub                                            ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 122 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template_2019|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                                                                          ; alt_sld_fab_with_jtag_input                        ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 122 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Template_2019|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                                                                       ; alt_sld_fab                                        ; alt_sld_fab  ;
@@ -410,7 +413,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 513   ;
+; Total registers                              ; 521   ;
 ; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 66    ;
 ; Number of registers using Asynchronous Clear ; 197   ;
@@ -565,17 +568,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 17                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 17                              ;
+; cycloneiii_ff     ; 8                               ;
+;     plain         ; 8                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -655,7 +657,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+------------------------------------------------------------------------------------------+
 ; Name                   ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                   ; Details                                                                                  ;
 +------------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+------------------------------------------------------------------------------------------+
-; LED[7]                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                ; N/A                                                                                      ;
+; LED[7]                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; LED_latch:inst5|LED4                ; N/A                                                                                      ;
 ; CLOCK_50Mhz            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; CLOCK_50Mhz                         ; N/A                                                                                      ;
 ; MyClockDivider:inst|op ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
 ; MyClockDivider:inst|op ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
@@ -700,7 +702,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Standard Edition
-    Info: Processing started: Mon Dec 02 16:43:06 2019
+    Info: Processing started: Wed Dec 04 13:25:42 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Template_2019 -c Template_2019
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -713,15 +715,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file led_lat
     Info (12022): Found design unit 1: LED_latch-LED_latch File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/LED_latch.vhd Line: 24
     Info (12023): Found entity 1: LED_latch File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/LED_latch.vhd Line: 5
 Info (12127): Elaborating entity "Template_2019" for the top level hierarchy
-Warning (275043): Pin "LED[7..0]" is missing source
 Warning (275013): Port "CLK" of type MyClockDivider and instance "inst" is missing source signal
 Warning (275009): Pin "CLOCK_50Mhz" not connected
-Warning (275009): Pin "DATA4" not connected
 Warning (275009): Pin "KEY" not connected
-Warning (275009): Pin "SEL" not connected
 Warning (275008): Primitive "LATCH" of instance "inst1" not used
 Warning (275008): Primitive "NOT" of instance "inst2" not used
 Warning (275008): Primitive "NOT" of instance "inst3" not used
+Info (12128): Elaborating entity "LED_latch" for hierarchy "LED_latch:inst4"
 Info (12128): Elaborating entity "MyClockDivider" for hierarchy "MyClockDivider:inst"
 Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_o1p.tdf
     Info (12023): Found entity 1: sld_ela_trigger_o1p File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/db/sld_ela_trigger_o1p.tdf Line: 26
@@ -749,7 +749,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.12.02.16:43:22 Progress: Loading sldc1d7e64f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.12.04.13:26:00 Progress: Loading sldc1d7e64f/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -772,15 +772,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/db/ip/sldc1d7e64f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldc1d7e64f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/db/ip/sldc1d7e64f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[7]" is stuck at GND
-    Warning (13410): Pin "LED[6]" is stuck at GND
-    Warning (13410): Pin "LED[5]" is stuck at GND
-    Warning (13410): Pin "LED[4]" is stuck at GND
-    Warning (13410): Pin "LED[3]" is stuck at GND
-    Warning (13410): Pin "LED[2]" is stuck at GND
-    Warning (13410): Pin "LED[1]" is stuck at GND
-    Warning (13410): Pin "LED[0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (13000): Registers with preset signals will power-up high File: c:/intelfpga/18.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 356
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
@@ -790,24 +782,18 @@ Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 34 of its 36 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 2 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "DATA4[3]"
-    Warning (15610): No output dependent on input pin "DATA4[2]"
-    Warning (15610): No output dependent on input pin "DATA4[1]"
-    Warning (15610): No output dependent on input pin "DATA4[0]"
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "SEL[1]"
-    Warning (15610): No output dependent on input pin "SEL[0]"
-Info (21057): Implemented 753 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 761 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 727 logic cells
+    Info (21061): Implemented 735 logic cells
     Info (21064): Implemented 4 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Mon Dec 02 16:43:32 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:43
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Wed Dec 04 13:26:12 2019
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:47
 
 

@@ -7,28 +7,32 @@
 #include "USART.h"
 #include "SWITCH.h"
 #include "init.h"
+#include "DAC.h"
 
 int main(void)
 {
-//	PLL_Config();
-//	SystemCoreClockUpdate();
+	PLL_Config();
+	SystemCoreClockUpdate();
 
-//	init_USART();
-//	init_blue_switch();
-	init_LCD();
-	LCD_CLR();
-	LCD_setup();
-	cmd_LCD(LCD_LINE1);
-	decimal(1000);
-	cmd_LCD(LCD_LINE2);
-	decimal_to_hex(1000);
+	init_USART();
+	init_blue_switch();
+	init_DAC();
+//	init_all_LED();
+//	init_timer2();
+//	init_LCD();
+//	LCD_CLR();
+//	LCD_setup();
+//	cmd_LCD(LCD_LINE1);
+//	decimal(1000);
+//	cmd_LCD(LCD_LINE2);
+//	decimal_to_hex(1000);
+
 	
-	
-//	NVIC->ISER[1] |= (1u << 8);				//interrupt for blue switch
-//	NVIC->ISER[1] |= (1u << 7);				//interupt for USART3 
+	NVIC->ISER[1] |= (1u << 8);				//interrupt for blue switch
+	NVIC->ISER[1] |= (1u << 7);				//interupt for USART3 
 	
 	while (1)
 	{
-	__WFI();
+	triangle_wave();
 	}
 }

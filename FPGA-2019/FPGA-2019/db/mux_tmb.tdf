@@ -29,14 +29,14 @@ SUBDESIGN mux_tmb
 VARIABLE 
 	result_node[1..0]	: WIRE;
 	sel_node[0..0]	: WIRE;
-	w_data53w[1..0]	: WIRE;
-	w_data67w[1..0]	: WIRE;
+	w_data59w[1..0]	: WIRE;
+	w_data73w[1..0]	: WIRE;
 
 BEGIN 
 	result[] = result_node[];
-	result_node[] = ( ((sel_node[] & w_data67w[1..1]) # ((! sel_node[]) & w_data67w[0..0])), ((sel_node[] & w_data53w[1..1]) # ((! sel_node[]) & w_data53w[0..0])));
+	result_node[] = ( ((sel_node[] & w_data73w[1..1]) # ((! sel_node[]) & w_data73w[0..0])), ((sel_node[] & w_data59w[1..1]) # ((! sel_node[]) & w_data59w[0..0])));
 	sel_node[] = ( sel[0..0]);
-	w_data53w[] = ( data[2..2], data[0..0]);
-	w_data67w[] = ( data[3..3], data[1..1]);
+	w_data59w[] = ( data[2..2], data[0..0]);
+	w_data73w[] = ( data[3..3], data[1..1]);
 END;
 --VALID FILE

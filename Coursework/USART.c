@@ -27,6 +27,12 @@ void init_USART (void)
 	USART_CR1_UE | 																														//usart main enable bit
 	USART_CR1_RXNEIE 																													//RXNE enable
 	);
+	
+	CLEAR_BIT(USART_MODULE->CR2,(1<<12|1<<13));																//clear stop bits = 1 stop bit
+	CLEAR_BIT(USART_MODULE->CR1, 1<<15);																				//16 bit oversmapling on the USART
+	CLEAR_BIT(USART_MODULE->CR1, 1<<12);																			//1 start bit 8 data bits 
+	CLEAR_BIT(USART_MODULE->CR1, 1<<10);																			//Disable the parity bit
+	CLEAR_BIT(USART_MODULE->CR1, 1<<9);																				//SET even parity
 	USART_MODULE->BRR= 0x187;																									//set the baud rate due to the calculations 
 
 }
@@ -44,7 +50,7 @@ void USART3_IRQHandler (void)
 {
 	char c = USART_read();
 	send_USART(c);
-	USART3->SR = 0x2000;
+	USART3->SR = 0x2000; 
 }
 void USART_string (char *string)
 {
