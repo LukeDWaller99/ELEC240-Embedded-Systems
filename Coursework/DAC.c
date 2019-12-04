@@ -1,4 +1,5 @@
 #include "DAC.h"
+#include "math.h"
 
 void init_DAC (void)
 {
@@ -17,19 +18,33 @@ void DC_output (void)
 {
 	output_DAC(0xFFFF);											//outputs a DC value to the DAC
 }
-void triangle_wave (void)											//Generates a sawtooth wave 
+void triangle_wave (void)									//Generates a sawtooth wave 
 {
 	int i;
-	for (i=0; i<0xFFF; i++)								//sawtooth starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
+	for (i=0; i<=0xFFF; i = i+2)						//triangle starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
 	{
 		output_DAC(i);												//outputs the value of i to the DAC
 	}
-	for (i=0xFFF; i>1; i--)
+	for (i=0xFFF; i>=0; i = i-2)						//traingle starts at 0xFFF, goes to 0, increamenting the count by 1 each time
 	{
-		output_DAC(i);
+		output_DAC(i);												//outputs the value of i to the DAC
 	}
 }
 void sine_wave (void)
+{
+	unsigned short sineWave[WAVEFORM_LENGTH];
+	int i;
+	double Radians;
+	const double M_PI = 3.1415926535897;
+	Radians = 2 * M_PI / WAVEFORM_LENGTH;
+	
+	for(i=0; i < WAVEFORM_LENGTH; i++)
+	{
+		sineWave[i] = 2000  * (sin(Radians*i)+1);
+		output_DAC(sineWave[i]);
+	}
+}
+void square_wave (void)
 {
 	
 }

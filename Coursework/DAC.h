@@ -5,6 +5,7 @@
 
 #define DAC_port 	GPIOA
 #define DAC_pin		5
+#define WAVEFORM_LENGTH 256
 
 void init_DAC 			(void);
 void output_DAC			(unsigned short d);
