@@ -10,6 +10,7 @@
 ".\objects\dac.o"
 ".\objects\fpga.o"
 ".\objects\morse.o"
+".\objects\interrupt.o"
 ".\objects\startup_stm32f429xx.o"
 ".\objects\system_stm32f4xx.o"
 --strict --scatter ".\Objects\CourseWork 1.sct"

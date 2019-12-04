@@ -8,6 +8,7 @@
 #include "SWITCH.h"
 #include "init.h"
 #include "DAC.h"
+#include "INTERRUPT.h"
 
 int main(void)
 {
@@ -19,6 +20,7 @@ int main(void)
 	init_all_LED();
 	init_timer2();
 	init_timer3();
+	init_interrupts();
 //	init_LCD();
 //	LCD_CLR();
 //	LCD_setup(); 
@@ -26,16 +28,15 @@ int main(void)
 //	decimal(1000);
 //	cmd_LCD(LCD_LINE2);
 //	decimal_to_hex(1000);
-
 	
-	NVIC->ISER[1] |= (1u << 8);				//interrupt for blue switch
-	NVIC->ISER[1] |= (1u << 7);				//interupt for USART3 
+ 
 	
 	while (1)
 	{
-//		sine_wave();
-		triangle_wave();
-//		square_wave();
-//		__WFI();
+//	sine_wave();
+//	DC_output();
+//	triangle_wave();
+	square_wave();
+//	__WFI();
 	}
 }

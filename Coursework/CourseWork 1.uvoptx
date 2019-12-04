@@ -223,7 +223,7 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\delay.c</PathWithFileName>
@@ -336,6 +336,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\MORSE.c</PathWithFileName>
       <FilenameWithoutPath>MORSE.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>12</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\INTERRUPT.c</PathWithFileName>
+      <FilenameWithoutPath>INTERRUPT.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

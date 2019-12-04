@@ -5,6 +5,7 @@
 #include "LED.h"
 #include "SWITCH.h"
 #include "ADC.h"
+#include "DAC.h"
 
 void init_all_components (void)	//this is to set up all of the components needed at once reducing the complixity of the main function in the main.c file
 {
@@ -17,4 +18,5 @@ void init_all_components (void)	//this is to set up all of the components needed
 	init_timer4();
 	init_timer5_10us();
 	init_ADC();
+	init_DAC();
 }
