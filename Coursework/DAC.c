@@ -20,7 +20,7 @@ void DC_output (void)
 }
 void triangle_wave (void)									//Generates a sawtooth wave 
 {
-	int i;
+	float i;
 	for (i=0; i<=0xFFF; i = i+2)						//triangle starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
 	{
 		output_DAC(i);												//outputs the value of i to the DAC
@@ -32,13 +32,13 @@ void triangle_wave (void)									//Generates a sawtooth wave
 }
 void sine_wave (void)
 {
-	unsigned short sineWave[WAVEFORM_LENGTH];
-	int i;
+	unsigned long sineWave[WAVEFORM_LENGTH];
+	unsigned long i;
 	double Radians;
 	const double M_PI = 3.1415926535897;
 	Radians = 2 * M_PI / WAVEFORM_LENGTH;
 	
-	for(i=0; i < WAVEFORM_LENGTH; i++)
+	for(i=0; i < WAVEFORM_LENGTH; i = i+4)
 	{
 		sineWave[i] = 2000  * (sin(Radians*i)+1);
 		output_DAC(sineWave[i]);
@@ -46,5 +46,13 @@ void sine_wave (void)
 }
 void square_wave (void)
 {
-	
+	short i;
+	for (i=1; i<=0xFFF; i = i +4 )
+	{
+		output_DAC(0xFFF);
+	}
+	for (i = 0xFFF; i>=0; i = i - 4)
+	{
+		output_DAC(0);
+	}
 }

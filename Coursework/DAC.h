@@ -12,5 +12,6 @@ void output_DAC			(unsigned short d);
 void DC_output 			(void);
 void triangle_wave 	(void);
 void sine_wave 			(void);
+void square_wave 		(void);
 
 #endif

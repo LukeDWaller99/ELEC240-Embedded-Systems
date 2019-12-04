@@ -17,11 +17,11 @@ int main(void)
 	init_USART();
 	init_blue_switch();
 	init_DAC();
-//	init_all_LED();
-//	init_timer2();
+	init_all_LED();
+	init_timer2();
 //	init_LCD();
 //	LCD_CLR();
-//	LCD_setup();
+//	LCD_setup(); 
 //	cmd_LCD(LCD_LINE1);
 //	decimal(1000);
 //	cmd_LCD(LCD_LINE2);
@@ -33,6 +33,8 @@ int main(void)
 	
 	while (1)
 	{
-	triangle_wave();
+//		sine_wave();
+//		triangle_wave();
+		square_wave();
 	}
 }
