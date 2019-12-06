@@ -4,6 +4,14 @@
 #include "DAC.h"
 
 void init_timer2 (void) 
+/*
+Function	: init_timer2
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the timer, timer 2 
+It does not rely on any other timers and peripherals
+The timer is set to run with a period of 210ms
+*/
 {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM2EN;		//clock for timer 2 enabled
 	TIM2->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
@@ -16,6 +24,14 @@ void init_timer2 (void)
 }
 
 void init_timer3 (void)
+/*
+Function	: init_timer3
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the timer, timer 3
+It does not rely on any other timers and peripherals
+The timer is set to run with a period of XXXXs
+*/
 {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM3EN;		//clock for timer 3 enabled
 	TIM3->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
@@ -28,6 +44,14 @@ void init_timer3 (void)
 }
 
 void init_timer4 (void)
+/*
+Function	: init_timer4
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the timer, timer 4 
+It does not rely on any other timers and peripherals
+The timer is set to run with a period of XXXXms
+*/
 {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM4EN;		//clock for timer 4 enabled
 	TIM4->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
@@ -38,7 +62,15 @@ void init_timer4 (void)
 	NVIC->ISER[0]|=(1u<<30);						//timer 4 interrupt enabled
 	TIM4->CR1|=TIM_CR1_CEN;							//timer counter start
 }
-void init_timer5_wave (void) 				//timer set at 48KHz
+void init_timer5_wave (void)
+/*
+Function	: init_timer5_wave
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the timer, timer 5 
+It does not rely on any other timers and peripherals
+The timer is set to run with a period of 20us
+*/
 {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM5EN;		//clock for timer 5 enabled
 	TIM5->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
@@ -49,21 +81,53 @@ void init_timer5_wave (void) 				//timer set at 48KHz
 	NVIC->ISER[1]|=(1u<<18) ;						//timer 5 interrupt enabled
 	TIM5->CR1|=TIM_CR1_CEN;							//timer 5 counter start
 }
-void TIM2_IRQHandler (void) 					//timer 2 interrupt routine
+void TIM2_IRQHandler (void) 	
+/*
+Function	: TIM2_IRQHandler
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the interupt handler for timer 2 
+It relys on the timer and the interrupt being initiated
+The interrupt handler is called at the same rate of the timer 2
+*/	
 {
 	TIM2->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
 	toggle_red_LED();										//toggles the red LED
 }	
-void TIM3_IRQHandler (void)						//timer 3 interrupt routine
+void TIM3_IRQHandler (void)						
+/*
+Function	: TIM3_IRQHandler
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the interupt handler for timer 3 
+It relys on the timer and the interrupt being initiated
+The interrupt handler is called at the same rate of the timer 3
+*/
 {
 	TIM3->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
 	toggle_blue_LED();									//toggles the blue LED
 }
-void TIM4_IRQHandler (void)						//timer 4 interrupt routine
+void TIM4_IRQHandler (void)				
+/*
+Function	: TIM4_IRQHandler
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the interupt handler for timer 4 
+It relys on the timer and the interrupt being initiated
+The interrupt handler is called at the same rate of the timer 4
+*/
 {
 	TIM4->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register 
 }
 void TIM5_IRQHandler (void)
+/*
+Function	: TIM5_IRQHandler
+Returns		: void - nothing
+Arguments	: void - nothing
+This function initialises the interupt handler for timer 5 
+It relys on the timer and the interrupt being initiated
+The interrupt handler is called at the same rate of the timer 5
+*/
 {
 	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
 	triangle_wave();										//runs the code the triangle wave
