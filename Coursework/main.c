@@ -25,19 +25,6 @@ int main(void)
 	init_interrupts();
 	init_ADC();
 //	init_LCD();
-//	LCD_CLR();
-//	LCD_setup(); 
-//	cmd_LCD(LCD_LINE1);
-//	decimal(1000);
-//	cmd_LCD(LCD_LINE2);
-//	decimal_to_hex(1000);
-//	LCD_setup();
-//	cmd_LCD(LCD_LINE1);
-//	decimal(voltage_ADC());
-//	put_LCD('.');
-//	decimal(remainder_ADC());
-	
- 
 	
 	while (1)
 	{

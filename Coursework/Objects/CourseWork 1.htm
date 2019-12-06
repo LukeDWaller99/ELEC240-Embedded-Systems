@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\CourseWork 1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\CourseWork 1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6120001: Last Updated: Fri Dec  6 12:46:36 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6120001: Last Updated: Fri Dec  6 13:46:52 2019
 <BR><P>
 <H3>Maximum Stack Usage =          8 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -680,7 +680,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
 <P><STRONG><a name="[3c]"></a>TIM5_IRQHandler</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, delay.o(.text.TIM5_IRQHandler))
-<BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;square_wave
+<BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;triangle_wave
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
@@ -708,7 +708,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[85]"></a>init_all_LED</STRONG> (Thumb, 136 bytes, Stack size 0 bytes, led.o(.text.init_all_LED))
+<P><STRONG><a name="[85]"></a>init_all_LED</STRONG> (Thumb, 168 bytes, Stack size 0 bytes, led.o(.text.init_all_LED))
 <BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -753,10 +753,6 @@ Global Symbols
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[7e]"></a>square_wave</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, dac.o(.text.square_wave))
-<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
-</UL>
-
 <P><STRONG><a name="[7d]"></a>toggle_blue_LED</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, led.o(.text.toggle_blue_LED))
 <BR><BR>[Called By]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
 </UL>
@@ -767,6 +763,10 @@ Global Symbols
 
 <P><STRONG><a name="[7c]"></a>toggle_red_LED</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, led.o(.text.toggle_red_LED))
 <BR><BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_IRQHandler
+</UL>
+
+<P><STRONG><a name="[7e]"></a>triangle_wave</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, dac.o(.text.triangle_wave))
+<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[6b]"></a>_fp_init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))

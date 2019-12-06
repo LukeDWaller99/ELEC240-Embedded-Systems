@@ -18,7 +18,7 @@ void init_blue_switch(void)
 
 void EXTI15_10_IRQHandler (void) 
 {
-	EXTI->PR |= 0x2000;	
-	send_USART('a');
-	toggle_green_LED();													//clear interrupt pending flag
+	EXTI->PR |= 0x2000;															//clear interrupt pending flag
+	send_USART('a');																//sends 'a' via usart to the terminal
+	toggle_green_LED();															//toggles the green LED 
 }

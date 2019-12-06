@@ -1,4 +1,4 @@
-#ifndef LED_H
+#ifndef LED_H 											//LED.h sets up all of the functions for the LED.c
 #define LED_H
 
 #include <stm32f4xx.h>

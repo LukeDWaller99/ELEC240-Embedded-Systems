@@ -52,12 +52,12 @@ void init_timer5_wave (void) 				//timer set at 48KHz
 void TIM2_IRQHandler (void) 					//timer 2 interrupt routine
 {
 	TIM2->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
-	toggle_red_LED();
+	toggle_red_LED();										//toggles the red LED
 }	
 void TIM3_IRQHandler (void)						//timer 3 interrupt routine
 {
 	TIM3->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
-	toggle_blue_LED();
+	toggle_blue_LED();									//toggles the blue LED
 }
 void TIM4_IRQHandler (void)						//timer 4 interrupt routine
 {
@@ -66,5 +66,5 @@ void TIM4_IRQHandler (void)						//timer 4 interrupt routine
 void TIM5_IRQHandler (void)
 {
 	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
-square_wave();
+	triangle_wave();										//runs the code the triangle wave
 }
