@@ -20,7 +20,7 @@ void DC_output (void)
 }
 void triangle_wave (void)										//Generates a triangular wave 
 {
-	float i;
+	short i;
 	for (i=0; i<=0xFFF; i = i+2)							//triangle starts at 0, goes to 0xFFFF, incrementing the count by 1 each time
 	{
 		output_DAC(i);													//outputs the value of i to the DAC
@@ -30,18 +30,16 @@ void triangle_wave (void)										//Generates a triangular wave
 		output_DAC(i);													//outputs the value of i to the DAC
 	}
 }
-void sine_wave (void)												//generates a sine wave
+void sine_wave (void)
 {
-	unsigned long sineWave[WAVEFORM_LENGTH];	
-	unsigned long i;
+	int sinewave[WAVEFORM_LENGTH];
+	short i; 
 	double Radians;
-	const double M_PI = 3.1415926535897;
-	Radians = 2 * M_PI / WAVEFORM_LENGTH;
-	
-	for(i=0; i < WAVEFORM_LENGTH; i = i+4)
+	Radians = 2 * PI / WAVEFORM_LENGTH;
+	for (i=0; i<=WAVEFORM_LENGTH; i++)
 	{
-		sineWave[i] = 2000  * (sin(Radians*i)+1);
-		output_DAC(sineWave[i]);
+		sinewave[i] = 2000 * (sin(Radians * i) + 1);
+		output_DAC(sinewave[i]);
 	}
 }
 void square_wave (void)	//generates a square wave

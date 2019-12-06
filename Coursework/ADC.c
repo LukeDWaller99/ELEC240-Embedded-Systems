@@ -21,3 +21,15 @@ unsigned short read_ADC (void)
 	}
 	return ADC1->DR;																	//return the converted value
 }
+float voltage_ADC (void)
+{
+	float voltage;
+	voltage=read_ADC()/1241;
+	return voltage;
+}
+float remainder_ADC (void)
+{
+	float remainder;
+	remainder = read_ADC()%1241;
+	return remainder;
+}

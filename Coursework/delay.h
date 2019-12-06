@@ -6,7 +6,7 @@
 void init_timer2 			(void);
 void init_timer3 			(void);
 void init_timer4 			(void);
-void init_timer2_5Hz 	(void);
-void init_timer5_10us	(void);
+void init_timer2 			(void);
+void init_timer5_wave	(void);
 
 #endif

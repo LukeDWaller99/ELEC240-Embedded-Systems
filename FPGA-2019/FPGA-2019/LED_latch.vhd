@@ -26,11 +26,11 @@ architecture LED_latch of LED_latch is
 begin 
 	process(latch)
 	begin
-		if(latch = '1') then
-			LED1 <= input1;
-			LED2 <= input2;
-			LED3 <= input3;
-			LED4 <= input4;
+		if(latch = '1') then			--when the latch is high 
+			LED1 <= input1;			--all of the inputs are mapped
+			LED2 <= input2;			--to thier respective outputs 
+			LED3 <= input3;			--these are then held until the 
+			LED4 <= input4;			--the latch goes high again 
 		end if;
 	end process;
 end LED_latch;

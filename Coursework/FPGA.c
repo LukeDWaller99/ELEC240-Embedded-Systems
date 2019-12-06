@@ -29,3 +29,7 @@ void init_FPGA (void)
 	GPIOB->MODER&=~(3u<<(2*10));				//clear pin function on GPIOB - control line PB_10
 	GPIOB->MODER|=(1u<<(2*10));					//set new pin function on GPIOB - control line PB_10
 }
+void send_FPGA (void)
+{
+	
+}

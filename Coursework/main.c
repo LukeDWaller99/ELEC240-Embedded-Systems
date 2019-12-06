@@ -9,6 +9,7 @@
 #include "init.h"
 #include "DAC.h"
 #include "INTERRUPT.h"
+#include "ADC.h"
 
 int main(void)
 {
@@ -20,7 +21,9 @@ int main(void)
 	init_all_LED();
 	init_timer2();
 	init_timer3();
+	init_timer5_wave();
 	init_interrupts();
+	init_ADC();
 //	init_LCD();
 //	LCD_CLR();
 //	LCD_setup(); 
@@ -28,6 +31,11 @@ int main(void)
 //	decimal(1000);
 //	cmd_LCD(LCD_LINE2);
 //	decimal_to_hex(1000);
+//	LCD_setup();
+//	cmd_LCD(LCD_LINE1);
+//	decimal(voltage_ADC());
+//	put_LCD('.');
+//	decimal(remainder_ADC());
 	
  
 	
@@ -36,7 +44,6 @@ int main(void)
 //	sine_wave();
 //	DC_output();
 //	triangle_wave();
-	square_wave();
-//	__WFI();
+	__WFI();
 	}
 }
