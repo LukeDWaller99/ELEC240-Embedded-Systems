@@ -66,5 +66,5 @@ void TIM4_IRQHandler (void)						//timer 4 interrupt routine
 void TIM5_IRQHandler (void)
 {
 	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
-	triangle_wave();
+square_wave();
 }

@@ -32,24 +32,22 @@ void triangle_wave (void)										//Generates a triangular wave
 }
 void sine_wave (void)
 {
-	int sinewave[WAVEFORM_LENGTH];
 	short i; 
 	double Radians;
 	Radians = 2 * PI / WAVEFORM_LENGTH;
 	for (i=0; i<=WAVEFORM_LENGTH; i++)
 	{
-		sinewave[i] = 2000 * (sin(Radians * i) + 1);
-		output_DAC(sinewave[i]);
+		DAC->DHR12R2 = 2000 * (sin(Radians * i) + 1);
 	}
 }
 void square_wave (void)	//generates a square wave
 {
 	short i;
-	for (i=1; i<=0xFFF; i = i +4 )
+	for (i=1; i<=1074; i = i + 1 )
 	{
 		output_DAC(0xFFF);
 	}
-	for (i = 0xFFF; i>=0; i = i - 4)
+	for (i = 0; i<=1074; i = i + 1)
 	{
 		output_DAC(0);
 	}
