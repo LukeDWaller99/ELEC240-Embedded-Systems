@@ -10,12 +10,11 @@
 
 void init_all_components (void)	//this is to set up all of the components needed at once reducing the complixity of the main function in the main.c file
 {
-	init_all_LED();								//initialise the LEDS
+	init_onboard_LEDs();								//initialise the LEDS
 	init_LCD();										//initialise the LCD
 	init_USART();									//initialise the USART
 	init_blue_switch();						//initialise the blue switch
 	init_timer2();								//initialise timer 2
-	init_timer3();								//initialise timer 3
 	init_timer4();								//initialise timer 4
 	init_timer5_wave();						//initialise timer 5
 	init_ADC();										//initialise the ADC

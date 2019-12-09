@@ -1,4 +1,7 @@
 #include "ADC.h"
+#include "LED.h"
+#include "USART.h"
+#include "LCD.h"
 
 void init_ADC (void)
 {
@@ -21,15 +24,38 @@ unsigned short read_ADC (void)
 	}
 	return ADC1->DR;																	//return the converted value
 }
-float voltage_ADC (void)
+void external_LED_ADC (void)
 {
-	float voltage;
-	voltage=read_ADC()/1241;
-	return voltage;
-}
-float remainder_ADC (void)
-{
-	float remainder;
-	remainder = read_ADC()%1241;
-	return remainder;
+	float voltage = read_ADC();
+	
+	voltage = (voltage) / 1241;
+	
+	if(voltage < 2)
+	{
+		external_LED1_on();
+		external_LED2_off();
+		external_LED3_off();
+		external_LED4_off();
+	}
+	else if (voltage < 2)
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_off();
+		external_LED4_off();
+	}
+	else if (voltage < 3)
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_on();
+		external_LED4_off();
+	}
+	else
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_on();
+		external_LED4_on();
+	}
 }

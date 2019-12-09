@@ -34,6 +34,7 @@ void put_LCD(unsigned char put);
 void init_LCD(void);
 void decimal(int decimal);
 void decimal_to_hex(int decimal);
-void LCD_setup (void);                                                        
+void LCD_setup (void);  
+void LCD_string (char *string);
            
 #endif					 
