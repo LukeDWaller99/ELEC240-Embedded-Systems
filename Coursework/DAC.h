@@ -6,8 +6,8 @@
 #define DAC_port 	GPIOA
 #define DAC_pin		5
 #define WAVEFORM_LENGTH 69 
-#define PI 3.14159265358979323846
-
+#define PI 	3.1415926535897932384626433832
+						
 void init_DAC 			(void);
 void output_DAC			(unsigned short d);
 void DC_output 			(void);

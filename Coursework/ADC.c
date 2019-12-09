@@ -24,38 +24,54 @@ unsigned short read_ADC (void)
 	}
 	return ADC1->DR;																	//return the converted value
 }
-void external_LED_ADC (void)
+void voltage_display (void)
 {
-	float voltage = read_ADC();
+	unsigned int voltage_int;
+	voltage_int = read_ADC();
 	
-	voltage = (voltage) / 1241;
+	float voltage_float = ((voltage_int*3.3)/4095);
 	
-	if(voltage < 2)
-	{
-		external_LED1_on();
-		external_LED2_off();
-		external_LED3_off();
-		external_LED4_off();
-	}
-	else if (voltage < 2)
-	{
-		external_LED1_on();
-		external_LED2_on();
-		external_LED3_off();
-		external_LED4_off();
-	}
-	else if (voltage < 3)
-	{
-		external_LED1_on();
-		external_LED2_on();
-		external_LED3_on();
-		external_LED4_off();
-	}
-	else
-	{
-		external_LED1_on();
-		external_LED2_on();
-		external_LED3_on();
-		external_LED4_on();
-	}
+	char array [16];
+	sprintf(array, "%.3f V", voltage_float);
+	
+	LCD_CLR();
+	cmd_LCD(LCD_LINE1);
+	LCD_string(array);
+	USART_string(array);
+	LCD_proportional_bar();
 }
+//void external_LED_ADC (void)
+//{
+//	float voltage = read_ADC();
+//	
+//	voltage = (voltage) / 1241;
+//	
+//	if(voltage < 2)
+//	{
+//		external_LED1_on();
+//		external_LED2_off();
+//		external_LED3_off();
+//		external_LED4_off();
+//	}
+//	else if (voltage < 2)
+//	{
+//		external_LED1_on();
+//		external_LED2_on();
+//		external_LED3_off();
+//		external_LED4_off();
+//	}
+//	else if (voltage < 3)
+//	{
+//		external_LED1_on();
+//		external_LED2_on();
+//		external_LED3_on();
+//		external_LED4_off();
+//	}
+//	else
+//	{
+//		external_LED1_on();
+//		external_LED2_on();
+//		external_LED3_on();
+//		external_LED4_on();
+//	}
+//}

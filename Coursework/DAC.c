@@ -1,5 +1,6 @@
 #include "DAC.h"
 #include "math.h"
+#include "ADC.h"
 
 void init_DAC (void)
 {
@@ -16,7 +17,7 @@ void output_DAC (unsigned short d)
 
 void DC_output (void)
 {
-	output_DAC(0xFFFF);												//outputs a DC value to the DAC
+	output_DAC(read_ADC());												//outputs a DC value to the DAC
 }
 void triangle_wave (void)										//Generates a triangular wave 
 {
@@ -27,7 +28,7 @@ void triangle_wave (void)										//Generates a triangular wave
 	}
 	for (i=0xFFF; i>=0; i = i-2)							//traingle starts at 0xFFF, goes to 0, increamenting the count by 1 each time
 	{
-		output_DAC(i);													//outputs the value of i to the DAC
+		output_DAC(i);	 												//outputs the value of i to the DAC
 	}
 }
 void sine_wave (void)
@@ -43,7 +44,7 @@ void sine_wave (void)
 void square_wave (void)	//generates a square wave
 {
 	short i;
-	for (i=1; i<=1074; i = i + 1 )
+	for (i = 1; i<=1074; i = i + 1 )
 	{
 		output_DAC(0xFFF);
 	}

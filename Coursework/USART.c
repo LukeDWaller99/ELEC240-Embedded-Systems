@@ -1,6 +1,10 @@
 #include "USART.h"
 #include "string.h"
 
+FILE __stdin 	= {0};
+FILE __stdour = {1};
+FILE __stderr	=	{2};
+
 void init_USART (void)
 {
 	unsigned char i1, i2;
@@ -51,6 +55,24 @@ void USART3_IRQHandler (void)
 	char c = USART_read();
 	send_USART(c);
 	USART3->SR = 0x2000; 
+}
+int get_f_x (FILE *f)
+{
+	int x;
+	
+	x = USART_read();	//read the character from the console
+	
+	if(x == '\r')
+	{
+		send_USART(x); //IF '\r' after it is echoed, a '\n' is needed afterwards
+		x = '\n';
+	}
+	return x;
+}
+int put_f_x(int x, FILE *f)
+{
+	send_USART(x); //write the character out to the console
+	return x;  
 }
 void USART_string (char *string)
 {

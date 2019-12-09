@@ -14,8 +14,7 @@ void LCD_delay_us(unsigned int us)		//blocking delay for LCD, argument is approx
 	}
 }
 void wait_LCD_busy(void)                                                         
-{    
-//	LCD_delay_us(3000);                                      
+{                                        
 	int i = 1;
 	
 	set_LCD_bus_input();
@@ -185,6 +184,18 @@ void LCD_string (char *string)
 }
 void LCD_proportional_bar (void)
 {
-	float voltage = read_ADC();
-	voltage = voltage / 1241;                                                                   
+	unsigned int data_ADC;
+	data_ADC = read_ADC;
+	unsigned int bar_value_array[16] = {2, 		254, 	508,	762,
+																			1016,	1270,	1524,	1778,
+																			2032,	2286,	2540,	2794,
+																			3048,	3302,	3556,	3810};
+	cmd_LCD(LCD_LINE2);
+	for(int  c=0; c<16; c++)
+	{
+		if(data_ADC > bar_value_array[c])
+		{
+			put_LCD('-');
+		}
+	}		
 }

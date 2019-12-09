@@ -18,7 +18,7 @@ int main(void)
 	init_LCD();
 	LCD_CLR();
 	cmd_LCD(LCD_LINE1);
-	LCD_string("bacon bits!!");
+	LCD_string("fuck off");
 	init_USART();
 	init_blue_switch();                                                                                                   
 	init_DAC();
@@ -42,6 +42,6 @@ int main(void)
 //	sine_wave();
 //	DC_output();
 //	triangle_wave();
-	external_LED_ADC();
+//	external_LED_ADC();
 	}
 }

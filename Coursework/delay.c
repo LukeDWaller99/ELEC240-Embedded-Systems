@@ -39,17 +39,6 @@ void init_timer3_1s (void)
 	NVIC->ISER[0]|=(1u<<29);						//timer 3 interrupt enabled
 	TIM3->CR1|=TIM_CR1_CEN;							//timer counter start
 }
-void init_timer3_750ms (void)
-{
-	RCC->APB1ENR|=RCC_APB1ENR_TIM3EN;		//clock for timer 3 enabled
-	TIM3->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
-																			//the APB clock is FCY/2 = 180MHz/2 = 90MHz
-	TIM3->PSC=3000-1;										//APB clock divided by 256 = 90MHz/256 = 351KHz
-	TIM3->ARR=2250;										//counter reload value, this sets the period of the timer to 100ms when F_APB =90MHz and PSC = 256
-	TIM3->CNT=0;												//zero timer counter 
-	NVIC->ISER[0]|=(1u<<29);						//timer 3 interrupt enabled
-	TIM3->CR1|=TIM_CR1_CEN;							//timer counter start
-}
 void init_timer3_500ms (void)
 {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM3EN;		//clock for timer 3 enabled
@@ -77,8 +66,8 @@ void init_timer4 (void)
 	RCC->APB1ENR|=RCC_APB1ENR_TIM4EN;		//clock for timer 4 enabled
 	TIM4->DIER|=TIM_DIER_UIE;						//enabled timer update interrupt
 																			//the APB clock is FCY/2 = 180MHz/2 = 90MHz
-	TIM4->PSC=11-1;										//APB clock divided by 256 = 90MHz/256 = 351KHz
-	TIM4->ARR=187;										//counter reload value, this sets the period of the timer to 100ms when F_APB =90MHz and PSC = 256
+	TIM4->PSC=30000-1;										//APB clock divided by 256 = 90MHz/256 = 351KHz
+	TIM4->ARR=6000;										//counter reload value, this sets the period of the timer to 100ms when F_APB =90MHz and PSC = 256
 	TIM4->CNT=0;												//zero timer counter 
 	NVIC->ISER[0]|=(1u<<30);						//timer 4 interrupt enabled
 	TIM4->CR1|=TIM_CR1_CEN;							//timer counter start
@@ -116,6 +105,7 @@ void variable_delay (int delay)
 int red_LED= 1;
 int blue_LED = 1;
 int green_LED = 1;
+int wave_selector =0;
 void TIM2_IRQHandler (void) 	
 {
 	TIM2->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
@@ -147,38 +137,52 @@ void TIM3_IRQHandler (void)
 void TIM4_IRQHandler (void)				
 {
 	TIM4->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register 
-
+	LCD_proportional_bar();
 }
 void TIM5_IRQHandler (void)
 {
 	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
-//	triangle_wave();										//runs the code the triangle wave
-	sine_wave();	
-//	square_wave(); 
+	if(wave_selector == 1)
+	{
+		DC_output();
+	}
+	else if(wave_selector == 2)
+	{
+		triangle_wave();										//runs the code the triangle wave
+	}
+	else if(wave_selector == 3)
+	{
+		sine_wave();	
+	}
+	else if(wave_selector == 4)
+	{
+		square_wave(); 
+	}
 }
 
 void DC_mode (void)
 {
 	init_timer3_2s(); 
 	LCD_string("DC");
+	wave_selector = 1;
+	init_timer4();
 }
-void AC_mode (void)
-{
-	init_timer3_1s();
-	LCD_string("AC");
-}
+
 void square_mode (void)
 {
-	init_timer3_750ms();
+	init_timer3_1s();
 	LCD_string("Square");
+	wave_selector = 4;
 }
 void sine_mode (void)
 {
 	init_timer3_500ms();
-	LCD_string("Triangle");
+	LCD_string("Sine");
+	wave_selector = 3;
 }
 void triangle_mode (void)
 {
 	init_timer3_250ms();
-	LCD_string("Sine");
+	LCD_string("Triangle");
+	wave_selector = 2;
 }
