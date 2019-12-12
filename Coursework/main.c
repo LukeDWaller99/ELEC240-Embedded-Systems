@@ -11,14 +11,16 @@
 #include "INTERRUPT.h"
 #include "ADC.h"
 
+
+
 int main(void)
 {
 	PLL_Config(); 
 	SystemCoreClockUpdate();
-	init_LCD();
+	init_LCD(); 
 	LCD_CLR();
 	cmd_LCD(LCD_LINE1);
-	LCD_string("fuck off");
+	LCD_string("PUSH BUTTON");
 	init_USART();
 	init_blue_switch();                                                                                                   
 	init_DAC();
@@ -27,21 +29,12 @@ int main(void)
 	init_timer2();
 	init_interrupts();
 	init_ADC();  
-	init_timer4();
 	init_timer5_wave();
-	green_LED_on();
-	blue_LED_on();
-	red_LED_on();
-//	external_LED1_on();
-//	external_LED2_on();		
-//	external_LED3_on();
-//	external_LED4_on();
+
 	                                                                                                                                                                                                                                        
 	while (1)
 	{
-//	sine_wave();
-//	DC_output();
-//	triangle_wave();
-//	external_LED_ADC();
+		unlock_animation();
+//		__WFI();
 	}
 }

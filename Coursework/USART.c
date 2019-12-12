@@ -1,9 +1,7 @@
 #include "USART.h"
 #include "string.h"
-
-FILE __stdin 	= {0};
-FILE __stdour = {1};
-FILE __stderr	=	{2};
+#include "stdio.h"
+#include "stdarg.h"
 
 void init_USART (void)
 {
@@ -56,7 +54,7 @@ void USART3_IRQHandler (void)
 	send_USART(c);
 	USART3->SR = 0x2000; 
 }
-int get_f_x (FILE *f)
+int fgetc(FILE *f)
 {
 	int x;
 	
@@ -67,9 +65,10 @@ int get_f_x (FILE *f)
 		send_USART(x); //IF '\r' after it is echoed, a '\n' is needed afterwards
 		x = '\n';
 	}
+	send_USART(x);
 	return x;
 }
-int put_f_x(int x, FILE *f)
+int fputc(int x, FILE *f)
 {
 	send_USART(x); //write the character out to the console
 	return x;  
@@ -81,5 +80,19 @@ void USART_string (char *string)
 	{
 		char character = string[i];																							//writes the position of i in the string to the char character
 		send_USART(character);																									//sends the character to the send usart function that writes the character out in usart 
+	}
+}
+#define BUFFER_SIZE 255
+char transmit_buffer[BUFFER_SIZE];
+void myPrintf (const char* format,...) //the elipses define dynamic linking or binding - this means there are variable numbers of argumetents
+{
+	va_list arguments;
+	va_start(arguments,format);
+	vsprintf(transmit_buffer ,format,arguments);
+	va_end(arguments);
+	
+	for(unsigned int i =0; i < BUFFER_SIZE; i++)
+	{
+		send_USART(transmit_buffer[i]);
 	}
 }

@@ -24,7 +24,7 @@
 
 void LCD_delay_us					(unsigned int us);
 void wait_LCD_busy				(void);
-void set_LCD_data					(unsigned char d, int pdt);
+void set_LCD_data					(unsigned char d, int val);
 void strobe_LCD						(void);
 void cmd_LCD							(unsigned char cmd);
 void put_LCD							(unsigned char put);
@@ -34,5 +34,8 @@ void decimal_to_hex				(int decimal);
 void LCD_setup 						(void);  
 void LCD_string 					(char *string);
 void LCD_proportional_bar (void);
-           
+void cursor_set 					(int column, int row);
+void custom_char_locked 	(void);
+void custom_char_unlocked (void);           
+
 #endif					 

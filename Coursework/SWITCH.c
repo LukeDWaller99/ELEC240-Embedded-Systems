@@ -5,6 +5,7 @@
 #include "delay.h"
 
 int mode = 0;
+int animation = 1;
 
 void init_blue_switch(void)
 {
@@ -22,7 +23,7 @@ void init_blue_switch(void)
 void EXTI15_10_IRQHandler (void) 
 {
 	EXTI->PR |= 0x2000;	//clear the interrupt flag
-	
+	animation = 0;
 	blue_LED_off();	//turns off the blue LED 
 	green_LED_off();	//turn off the green LED
 	red_LED_off(); 	//turn off the red LED
@@ -35,9 +36,11 @@ void EXTI15_10_IRQHandler (void)
 			LCD_CLR();	//clears the LCD
 			while(GPIOC->IDR & 0x2000) //while button is pressed
 			{
-				cmd_LCD(LCD_LINE1); //line 1 od the LCD
+				cursor_set(1,1);
 				LCD_string("HOLD :"); //write HOLD: to the LCD
+				
 				red_LED_off(); //turn off the red LED 
+				voltage_display();
 				variable_delay(10000); //variable delay of 10s
 			}
 			LCD_CLR(); //clear the LCD                                                                                                                                                                                                                    
@@ -67,4 +70,14 @@ void EXTI15_10_IRQHandler (void)
 		}
 	}
 	
+}
+void unlock_animation (void)
+{
+	if(animation == 1)
+	{
+	custom_char_locked();
+	variable_delay(1000);
+	custom_char_unlocked();
+	variable_delay(1000);
+	}
 }

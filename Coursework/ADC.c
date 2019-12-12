@@ -2,6 +2,7 @@
 #include "LED.h"
 #include "USART.h"
 #include "LCD.h"
+#include <stdio.h>
 
 void init_ADC (void)
 {
@@ -34,44 +35,45 @@ void voltage_display (void)
 	char array [16];
 	sprintf(array, "%.3f V", voltage_float);
 	
-	LCD_CLR();
-	cmd_LCD(LCD_LINE1);
+	cursor_set(10, 1);
 	LCD_string(array);
-	USART_string(array);
-	LCD_proportional_bar();
+	myPrintf("%.3f V\n\r", voltage_float);
+	myPrintf("\\033[2J");
+	myPrintf("\\033[u");
+	LCD_proportional_bar();                                                                                                      
+	if(voltage_float == 0)
+	{
+		external_LED1_off();
+		external_LED2_off();
+		external_LED3_off();
+		external_LED4_off();
+	}
+	else if(voltage_float < 0.825)
+	{
+		external_LED1_on();
+		external_LED2_off();
+		external_LED3_off();
+		external_LED4_off();
+	}
+	else if (voltage_float < 1.65)
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_off();
+		external_LED4_off();
+	}
+	else if (voltage_float < 2.475)
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_on();
+		external_LED4_off();
+	}
+	else
+	{
+		external_LED1_on();
+		external_LED2_on();
+		external_LED3_on();
+		external_LED4_on();
+	}
 }
-//void external_LED_ADC (void)
-//{
-//	float voltage = read_ADC();
-//	
-//	voltage = (voltage) / 1241;
-//	
-//	if(voltage < 2)
-//	{
-//		external_LED1_on();
-//		external_LED2_off();
-//		external_LED3_off();
-//		external_LED4_off();
-//	}
-//	else if (voltage < 2)
-//	{
-//		external_LED1_on();
-//		external_LED2_on();
-//		external_LED3_off();
-//		external_LED4_off();
-//	}
-//	else if (voltage < 3)
-//	{
-//		external_LED1_on();
-//		external_LED2_on();
-//		external_LED3_on();
-//		external_LED4_off();
-//	}
-//	else
-//	{
-//		external_LED1_on();
-//		external_LED2_on();
-//		external_LED3_on();
-//		external_LED4_on();
-//	}
-//}

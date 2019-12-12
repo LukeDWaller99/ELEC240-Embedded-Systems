@@ -13,7 +13,6 @@ void init_USART 				(void);
 char USART_read 				(void);
 void send_USART 				(unsigned char d);
 void USART_string 			(char *string);
-int get_f_x (FILE *f);
-int put_f_x(int x, FILE *f);
+void myPrintf 					(const char* format,...);
 
 #endif

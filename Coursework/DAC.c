@@ -17,7 +17,7 @@ void output_DAC (unsigned short d)
 
 void DC_output (void)
 {
-	output_DAC(read_ADC());												//outputs a DC value to the DAC
+	output_DAC(0xFFF);												//outputs a DC value to the DAC
 }
 void triangle_wave (void)										//Generates a triangular wave 
 {
@@ -29,7 +29,7 @@ void triangle_wave (void)										//Generates a triangular wave
 	for (i=0xFFF; i>=0; i = i-2)							//traingle starts at 0xFFF, goes to 0, increamenting the count by 1 each time
 	{
 		output_DAC(i);	 												//outputs the value of i to the DAC
-	}
+	} 
 }
 void sine_wave (void)
 {
@@ -41,9 +41,10 @@ void sine_wave (void)
 		DAC->DHR12R2 = 2000 * (sin(Radians * i) + 1);
 	}
 }
+
 void square_wave (void)	//generates a square wave
 {
-	short i;
+	int i;
 	for (i = 1; i<=1074; i = i + 1 )
 	{
 		output_DAC(0xFFF);

@@ -13,5 +13,6 @@ unsigned short read_ADC (void);
 float voltage_ADC (void);
 float remainder_ADC (void);
 void external_LED_ADC (void);
+void voltage_display (void);
 
 #endif
