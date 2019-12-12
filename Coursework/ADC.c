@@ -33,13 +33,13 @@ void voltage_display (void)
 	float voltage_float = ((voltage_int*3.3)/4095);
 	
 	char array [16];
-	sprintf(array, "%.3f V", voltage_float);
+	sprintf(array, "%.3fV", voltage_float);
 	
 	cursor_set(10, 1);
-	LCD_string(array);
-	myPrintf("%.3f V\n\r", voltage_float);
-	myPrintf("\\033[2J");
-	myPrintf("\\033[u");
+	LCD_string(array);	
+	myPrintf("\x1b[0J\x1b[u\x1b[32;1mVoltage : %.3fV\n\r", voltage_float);
+	//https://solarianprogrammer.com/2019/04/08/c-programming-ansi-escape-codes-windows-macos-linux-terminals/
+	                                                                                                                                                                                                                                                                                                                                                                                             
 	LCD_proportional_bar();                                                                                                      
 	if(voltage_float == 0)
 	{

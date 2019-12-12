@@ -5,6 +5,7 @@
 #include "stdint.h"
 #include "LCD.h"
 #include "string.h"
+#include "USART.h"
 
 void init_timer2 (void) 													//timer set for the red LED interrupt at 4.7Hz
 {
@@ -12,12 +13,11 @@ void init_timer2 (void) 													//timer set for the red LED interrupt at 4.
 	TIM2->DIER|=TIM_DIER_UIE;												//enabled timer update interrupt
 																									//the APB clock is FCY/2 = 180MHz/2 = 90MHz
 	TIM2->PSC=30000-1;																//APB clock divided by 256 = 90MHz/256 = 351KHz
-	TIM2->ARR=640;																	//counter reload value, this sets the period of the timer to 208ms when F_APB =90MHz and PSC = 256
+	TIM2->ARR=313;																	//counter reload value, this sets the period of the timer to 208ms when F_APB =90MHz and PSC = 256
 	TIM2->CNT=0;																		//zero timer counter 
   NVIC->ISER[0]|=(1u<<28);												//timer 2 interrupt enabled
 	TIM2->CR1|=TIM_CR1_CEN;													//timer counter start
 }
-
 void init_timer3_2s (void)												//timer set for the green LED interrupt at0.5Hz
                                                                                                                                                                                                                                                               {
 	RCC->APB1ENR|=RCC_APB1ENR_TIM3EN;								//clock for timer 3 enabled
@@ -83,7 +83,18 @@ void init_timer5_wave (void)											//timer set to 48KHz used for the waves
 	TIM5->CNT=0;																		//zero timer counter
 	NVIC->ISER[1]|=(1u<<18);												//timer 5 interrupt enabled
 	TIM5->CR1|=TIM_CR1_CEN;													//timer 5 counter start
-} 
+}
+void init_timer7 (void)														//timer set to XXXX for the Morse code
+{
+	RCC->AHB1ENR|=RCC_APB1ENR_TIM7EN;								//clock for timer 7 enabled 
+	TIM7->DIER|=TIM_DIER_UIE;												//enabled timer update interrupt
+																									//the APB clock is FCY/2 = 108MHz/2 = 90MHz
+	TIM7->PSC=30000-1;	
+	TIM7->ARR=6000;
+	TIM7->CNT=0;
+	NVIC->ISER[1]|=(1u<<23);
+	TIM5->CR1|=TIM_CR1_CEN;
+}
 void variable_delay_timer (uint32_t n)
 {
 	CoreDebug->DEMCR|=CoreDebug_DEMCR_TRCENA_Msk;
@@ -160,9 +171,14 @@ void TIM5_IRQHandler (void)
 		square_wave(); 
 	}
 }
-
+void TIM7_IRQHandler (void)
+{
+	TIM7->SR&=~TIM_SR_UIF;	//interrupt flag cleared in status register 
+	
+}
 void DC_mode (void)
 {
+	myPrintf("DC:\n\r");
 	LCD_CLR();
 	init_timer3_2s();
 	cursor_set(1,1);

@@ -1,67 +1,269 @@
 #include "MORSE.h"
+#include "delay.h"
+#include "LED.h"
+#include "ADC.h"
 
-void dot (void)
+int w = 1;
+
+void dot (void) // 
 {
-	
+	variable_delay(w);
 }
 
 void dash (void)
 {
-	
+	variable_delay(3*w);
 }
-void space (void)
+void intra_char (void)
 {
-	
+	variable_delay(w);
 }
-void letter_space (void)
+void inter_char (void)
 {
-	
+	variable_delay(3*w);
 }
-void work_space (void)
+void word_space (void)
 {
-	
+	variable_delay(7*w);
 }
-void zero (void)
+void zero (void) //-----
 {
-	
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	inter_char();
 }
-void one (void)
+void one (void) //.----
 {
-	
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	inter_char();
 }
-void two (void)
+void two (void) //..---
 {
-	
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	inter_char();
 }
-void three (void)
+void three (void) //...--
 {
-	
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	inter_char();
 }
-void four (void)
+void four (void) //....-
 {
-	
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	inter_char();	
 }
-void five (void)
+void five (void) //......
 {
-	
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	inter_char();	
 }
-void six (void)
+void six (void) //-.....
 {
-	
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	inter_char();
 }
-void seven (void)
+void seven (void) //--...
 {
-	
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	inter_char();
 }
-void eight (void)
+void eight (void) //---..
 {
-	
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	inter_char();
 }
-void nine (void)
+void nine (void) //----.
 {
-	
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dash();
+	blue_LED_off();
+	intra_char();
+	blue_LED_on();
+	dot();
+	blue_LED_off();
+	inter_char();
 }
-void v (void)
+void morse_voltage (void)
 {
+	unsigned int voltage_int;
+	voltage_int = read_ADC();
 	
+	float voltage_float = ((voltage_int*3.3)/4095);
+	
+	char array [16];
+	
+	if(
 }

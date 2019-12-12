@@ -8,15 +8,15 @@ void custom_char_locked (void)
 {
 	unsigned char custom_char_5x8[] =
 	{0x00, 0x0E, 0x11, 0x11, 0x1F, 0x1B, 0x1B, 0x1F}; 
-	for(int i =0; i <= 8; i++)
+	for(int i =0; i <= 7; i++)
 	{
 		cmd_LCD(0x40+i);
-		variable_delay(20);
+		variable_delay(10);
 		put_LCD(custom_char_5x8[i]);
-		variable_delay(20);
+		variable_delay(10);
 	}
-	cmd_LCD(LCD_LINE2);
-	variable_delay(20);
+	cursor_set(16,1);
+	variable_delay(10);
 	put_LCD(0);
 }
 void custom_char_unlocked (void)
@@ -26,12 +26,12 @@ void custom_char_unlocked (void)
 	for(int i =0; i <= 8; i++)
 	{
 		cmd_LCD(0x40+i);
-		variable_delay(20);
+		variable_delay(10);
 		put_LCD(custom_char_5x8[i]);
-		variable_delay(20);
+		variable_delay(10);
 	}
-	cmd_LCD(LCD_LINE2);
-	variable_delay(20);
+	cursor_set(16,1);                                                                                                                                                 
+	variable_delay(10);
 	put_LCD(0);
 }
 void LCD_delay_us(unsigned int us)						//blocking delay for LCD, argument is approximate number of micro-seconds to delay
@@ -60,7 +60,6 @@ void wait_LCD_busy(void)                  		//wats for the LCD to be ready by ch
 		i = LCD_PORT->IDR;												//maps the LCD port pin equal i
 		i &= (1u<<7);															//sets the LCD port pin 
 		clr_LCD_E();															//set the LCD enable pin low 
-		LCD_delay_us(10);													//wait of 10us
 		strobe_LCD();															//strobe_LCD the LCD
 	}
 		set_LCD_bus_output();											//set the LCD bus back to output
@@ -81,7 +80,6 @@ void set_LCD_data(unsigned char d, int val)		//sets the data for the LCD
 
 void strobe_LCD(void)													//10us high pulse on LCD enable line
 {
-	LCD_delay_us(10);														//wait of 10us
 	set_LCD_E(); 																//high on the LCD enable line
 	LCD_delay_us(10); 													//wait of 10us
 	clr_LCD_E(); 																//low on the LCD enable line
@@ -173,7 +171,7 @@ void decimal_to_hex(int decimal)							//sends a hex number to the output of the
 }
 void init_LCD(void)														//intialises the LCD into 4 bit mode
 {
-		SystemCoreClockUpdate();
+				SystemCoreClockUpdate();
 		RCC->AHB1ENR|=RCC_AHB1ENR_GPIODEN;				//enable LCD port clock
 	
 			//CONFIG LCD GPIO PINS
@@ -199,7 +197,7 @@ void init_LCD(void)														//intialises the LCD into 4 bit mode
 	LCD_delay_us(25000);												//25ms startup delay
 	cmd_LCD(0x28);															//Function set: 2 Line, 4-bit, 5x7 dots
 	cmd_LCD(0x0F);															//Display on, Cursor blinking command
-	cmd_LCD(0x01);															//Clears the LCD
+	cmd_LCD(0x01);	 														//Clears the LCD
 	cmd_LCD(0x06);															//Entry mode, auto increment with no shift
 }
 void LCD_string (char *string)								//sends a string of data to the LCD display
@@ -225,8 +223,8 @@ void LCD_proportional_bar (void)							//send a bar proportional to the input vo
 	{
 		if(data_ADC > bar_value_array[c]) 				//check if the value of data_ADC is greater than bar_value_array[c]
 		{
-			put_LCD('-');
-			//if the value is greater put a bar onto the LCD 
+			put_LCD('-');														//if the value is greater put a bar onto the LCD 
+			send_USART('-');
 		}
 	}	
 	LCD_string("                ");	
@@ -241,4 +239,5 @@ void cursor_set (int column, int row)
 	{
 		cmd_LCD((LCD_LINE2) + (column-1));
 	}
+
 }

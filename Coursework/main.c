@@ -20,7 +20,7 @@ int main(void)
 	init_LCD(); 
 	LCD_CLR();
 	cmd_LCD(LCD_LINE1);
-	LCD_string("PUSH BUTTON");
+	LCD_string("PUSH BUTTON TO");
 	init_USART();
 	init_blue_switch();                                                                                                   
 	init_DAC();

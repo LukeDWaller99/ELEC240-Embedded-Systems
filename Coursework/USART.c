@@ -82,7 +82,7 @@ void USART_string (char *string)
 		send_USART(character);																									//sends the character to the send usart function that writes the character out in usart 
 	}
 }
-#define BUFFER_SIZE 255
+#define BUFFER_SIZE 32
 char transmit_buffer[BUFFER_SIZE];
 void myPrintf (const char* format,...) //the elipses define dynamic linking or binding - this means there are variable numbers of argumetents
 {
