@@ -17,7 +17,7 @@ void output_DAC (unsigned short d)
 
 void DC_output (void)
 {
-	output_DAC(0xFFF);												//outputs a DC value to the DAC
+	output_DAC(read_ADC());												//outputs a DC value to the DAC
 }
 void triangle_wave (void)										//Generates a triangular wave 
 {

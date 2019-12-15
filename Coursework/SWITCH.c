@@ -3,6 +3,7 @@
 #include "USART.h"
 #include "LCD.h"
 #include "delay.h"
+#include "ADC.h"
 
 int mode = 0;
 int animation = 1;
@@ -38,7 +39,6 @@ void EXTI15_10_IRQHandler (void)
 			{
 				cursor_set(1,1);
 				LCD_string("HOLD :"); //write HOLD: to the LCD
-				
 				red_LED_off(); //turn off the red LED 
 				voltage_display();
 				variable_delay(10000); //variable delay of 10s

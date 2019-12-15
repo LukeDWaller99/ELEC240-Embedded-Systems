@@ -265,5 +265,4 @@ void morse_voltage (void)
 	
 	char array [16];
 	
-	if(
 }

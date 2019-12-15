@@ -35,6 +35,6 @@ int main(void)
 	while (1)
 	{
 		unlock_animation();
-//		__WFI();
+		//__WFI();
 	}
 }

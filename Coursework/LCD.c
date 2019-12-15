@@ -60,6 +60,7 @@ void wait_LCD_busy(void)                  		//wats for the LCD to be ready by ch
 		i = LCD_PORT->IDR;												//maps the LCD port pin equal i
 		i &= (1u<<7);															//sets the LCD port pin 
 		clr_LCD_E();															//set the LCD enable pin low 
+		LCD_delay_us(10);
 		strobe_LCD();															//strobe_LCD the LCD
 	}
 		set_LCD_bus_output();											//set the LCD bus back to output
@@ -80,6 +81,7 @@ void set_LCD_data(unsigned char d, int val)		//sets the data for the LCD
 
 void strobe_LCD(void)													//10us high pulse on LCD enable line
 {
+	LCD_delay_us(10);
 	set_LCD_E(); 																//high on the LCD enable line
 	LCD_delay_us(10); 													//wait of 10us
 	clr_LCD_E(); 																//low on the LCD enable line

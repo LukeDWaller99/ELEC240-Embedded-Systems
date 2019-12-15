@@ -89,11 +89,11 @@ void init_timer7 (void)														//timer set to XXXX for the Morse code
 	RCC->AHB1ENR|=RCC_APB1ENR_TIM7EN;								//clock for timer 7 enabled 
 	TIM7->DIER|=TIM_DIER_UIE;												//enabled timer update interrupt
 																									//the APB clock is FCY/2 = 108MHz/2 = 90MHz
-	TIM7->PSC=30000-1;	
-	TIM7->ARR=6000;
+	TIM7->PSC=11-1;	
+	TIM7->ARR=187;
 	TIM7->CNT=0;
 	NVIC->ISER[1]|=(1u<<23);
-	TIM5->CR1|=TIM_CR1_CEN;
+	TIM7->CR1|=TIM_CR1_CEN;
 }
 void variable_delay_timer (uint32_t n)
 {
@@ -153,7 +153,7 @@ void TIM4_IRQHandler (void)
 }
 void TIM5_IRQHandler (void)
 {
-	TIM5->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
+	TIM7->SR&=~TIM_SR_UIF;							//interrupt flag cleared in status register
 	if(wave_selector == 1)
 	{
 		DC_output();
@@ -171,20 +171,20 @@ void TIM5_IRQHandler (void)
 		square_wave(); 
 	}
 }
-void TIM7_IRQHandler (void)
-{
-	TIM7->SR&=~TIM_SR_UIF;	//interrupt flag cleared in status register 
-	
-}
+//void TIM7_IRQHandler (void)
+//{
+//	TIM7->SR&=~TIM_SR_UIF;	//interrupt flag cleared in status register 
+//	
+//}
 void DC_mode (void)
 {
-	myPrintf("DC:\n\r");
+
 	LCD_CLR();
 	init_timer3_2s();
 	cursor_set(1,1);
 	LCD_string("DC");
 	wave_selector = 1;
-	init_timer4();                     
+	init_timer4();                    
 }
 
 void square_mode (void)
@@ -194,7 +194,7 @@ void square_mode (void)
 	cursor_set(1,1);
 	LCD_string("Square");
 	wave_selector = 4;
-	init_timer4();   
+	init_timer4();  
 }
 void sine_mode (void)
 {
@@ -203,7 +203,7 @@ void sine_mode (void)
 	cursor_set(1,1);
 	LCD_string("Sine");
 	wave_selector = 3;
-	init_timer4();   
+	init_timer4(); 
 }
 void triangle_mode (void)
 {
@@ -212,5 +212,5 @@ void triangle_mode (void)
 	cursor_set(1,1);
 	LCD_string("Triangle");
 	wave_selector = 2;
-	init_timer4();   
+	init_timer4();  
 }

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Dec 04 13:26:12 2019
-Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Standard Edition
+Analysis & Synthesis Status : Failed - Sun Dec 15 17:03:40 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Template_2019
-Top-level Entity Name : Template_2019
+Top-level Entity Name : multiplexer
 Family : Cyclone IV E
-Total logic elements : 714
-    Total combinational functions : 512
-    Dedicated logic registers : 521
-Total registers : 521
-Total pins : 17
-Total virtual pins : 0
-Total memory bits : 32,768
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
