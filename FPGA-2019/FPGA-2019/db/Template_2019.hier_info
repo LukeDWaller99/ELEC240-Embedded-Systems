@@ -1,91 +1,23 @@
-|Template_2019
-LED[0] <= LED_latch:inst4.LED1
-LED[1] <= LED_latch:inst4.LED2
-LED[2] <= LED_latch:inst4.LED3
-LED[3] <= LED_latch:inst4.LED4
-LED[4] <= LED_latch:inst5.LED1
-LED[5] <= LED_latch:inst5.LED2
-LED[6] <= LED_latch:inst5.LED3
-LED[7] <= LED_latch:inst5.LED4
-SEL[0] => LED_latch:inst4.latch
-SEL[1] => LED_latch:inst5.latch
-DATA4[0] => LED_latch:inst4.input1
-DATA4[0] => LED_latch:inst5.input1
-DATA4[1] => LED_latch:inst4.input2
-DATA4[1] => LED_latch:inst5.input2
-DATA4[2] => LED_latch:inst4.input3
-DATA4[2] => LED_latch:inst5.input3
-DATA4[3] => LED_latch:inst4.input4
-DATA4[3] => LED_latch:inst5.input4
-CLOCK_50Mhz => ~NO_FANOUT~
-KEY[0] => ~NO_FANOUT~
-KEY[1] => ~NO_FANOUT~
-
-
-|Template_2019|LED_latch:inst4
-latch => LED4~reg0.CLK
-latch => LED3~reg0.CLK
-latch => LED2~reg0.CLK
-latch => LED1~reg0.CLK
-input1 => LED1~reg0.DATAIN
-input2 => LED2~reg0.DATAIN
-input3 => LED3~reg0.DATAIN
-input4 => LED4~reg0.DATAIN
-LED1 <= LED1~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED2 <= LED2~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED3 <= LED3~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED4 <= LED4~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Template_2019|LED_latch:inst5
-latch => LED4~reg0.CLK
-latch => LED3~reg0.CLK
-latch => LED2~reg0.CLK
-latch => LED1~reg0.CLK
-input1 => LED1~reg0.DATAIN
-input2 => LED2~reg0.DATAIN
-input3 => LED3~reg0.DATAIN
-input4 => LED4~reg0.DATAIN
-LED1 <= LED1~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED2 <= LED2~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED3 <= LED3~reg0.DB_MAX_OUTPUT_PORT_TYPE
-LED4 <= LED4~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Template_2019|MyClockDivider:inst
-CLK => op.CLK
-CLK => counter[0].CLK
-CLK => counter[1].CLK
-CLK => counter[2].CLK
-CLK => counter[3].CLK
-CLK => counter[4].CLK
-CLK => counter[5].CLK
-CLK => counter[6].CLK
-CLK => counter[7].CLK
-CLK => counter[8].CLK
-CLK => counter[9].CLK
-CLK => counter[10].CLK
-CLK => counter[11].CLK
-CLK => counter[12].CLK
-CLK => counter[13].CLK
-CLK => counter[14].CLK
-CLK => counter[15].CLK
-CLK => counter[16].CLK
-CLK => counter[17].CLK
-CLK => counter[18].CLK
-CLK => counter[19].CLK
-CLK => counter[20].CLK
-CLK => counter[21].CLK
-CLK => counter[22].CLK
-CLK => counter[23].CLK
-CLK => counter[24].CLK
-CLK => counter[25].CLK
-CLK => counter[26].CLK
-CLK => counter[27].CLK
-CLK => counter[28].CLK
-CLK => counter[29].CLK
-CLK => counter[30].CLK
-CLK => counter[31].CLK
-Y <= op.DB_MAX_OUTPUT_PORT_TYPE
+|multiplexer
+packet_selector => Output[7].IN0
+packet_selector => Output[3].IN0
+led_flash => Output[3].IN1
+led_flash => Output[7].IN1
+Input[0] => Output[0]$latch.DATAIN
+Input[0] => Output[4]$latch.DATAIN
+Input[1] => Output[1]$latch.DATAIN
+Input[1] => Output[5]$latch.DATAIN
+Input[2] => Output[2]$latch.DATAIN
+Input[2] => Output[6]$latch.DATAIN
+Input[3] => Output[3]$latch.DATAIN
+Input[3] => Output[7]$latch.DATAIN
+Output[0] <= Output[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= Output[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= Output[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= Output[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= Output[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= Output[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= Output[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Output[7] <= Output[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

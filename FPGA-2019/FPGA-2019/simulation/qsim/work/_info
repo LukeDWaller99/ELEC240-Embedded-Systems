@@ -8,8 +8,8 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
-Etemplate_2019
-Z1 w1575466131
+Emultiplexer
+Z1 w1576442610
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -18,23 +18,113 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z9 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
-Z10 dC:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
-Z11 8Template_2019.vho
-Z12 FTemplate_2019.vho
+R0
+Z10 8Template_2019.vho
+Z11 FTemplate_2019.vho
+l0
+L36
+VblKdJ]hOi00eGdQP2SI[T1
+!s100 ^ImS1W22Y>iP6L;>Und]c1
+Z12 OV;C;10.5b;63
+32
+Z13 !s110 1576442611
+!i10b 1
+Z14 !s108 1576442611.000000
+Z15 !s90 -work|work|Template_2019.vho|
+Z16 !s107 Template_2019.vho|
+!i113 1
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 11 multiplexer 0 22 blKdJ]hOi00eGdQP2SI[T1
+l1066
+L70
+V855LPWbPJ_BL5_`FHj8E32
+!s100 HEE[=^NH:HN`I`403PNC30
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Emultiplexer_vhd_vec_tst
+Z19 w1576442609
+R7
+R8
+R0
+Z20 8Waveform2.vwf.vht
+Z21 FWaveform2.vwf.vht
+l0
+L31
+VThIB2Zz:STNi<:n>9S[^o2
+!s100 Zhl4JTW?zRAXS[SA8U0EJ2
+R12
+32
+R13
+!i10b 1
+R14
+Z22 !s90 -work|work|Waveform2.vwf.vht|
+Z23 !s107 Waveform2.vwf.vht|
+!i113 1
+R17
+R18
+Amultiplexer_arch
+R7
+R8
+Z24 DEx4 work 23 multiplexer_vhd_vec_tst 0 22 ThIB2Zz:STNi<:n>9S[^o2
+l48
+L33
+Vg<c[]F>26a9:Q[;^Zk^R13
+!s100 n;h`a^Yk9JeD4bef?@5kl1
+R12
+32
+R13
+!i10b 1
+R14
+R22
+R23
+!i113 1
+R17
+R18
+Etemplate_2019
+Z25 w1575466131
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+Z26 dC:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
+R10
+R11
 l0
 L37
 V3ZR4bAk<g1a4FHOcgT^S>0
 !s100 J47d]m6ZHVZ3zMiBVj@>a3
-Z13 OV;C;10.5b;63
+R12
 32
-Z14 !s110 1575466132
+Z27 !s110 1575466132
 !i10b 1
-Z15 !s108 1575466132.000000
-Z16 !s90 -work|work|Template_2019.vho|
-Z17 !s107 Template_2019.vho|
+Z28 !s108 1575466132.000000
+R15
+R16
 !i113 1
-Z18 o-work work
-Z19 tExplicit 1 CvgOpt 0
+R17
+R18
 Astructure
 R2
 R3
@@ -49,37 +139,37 @@ l1060
 L75
 VccYln:M77DPHFI?e^kXS02
 !s100 9[fCHhYJVQN`JdoZ^?PPI2
-R13
+R12
 32
-R14
+R27
 !i10b 1
+R28
 R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
 Etemplate_2019_vhd_vec_tst
-Z20 w1575466130
+Z29 w1575466130
 R7
 R8
-R10
-Z21 8Waveform.vwf.vht
-Z22 FWaveform.vwf.vht
+R26
+Z30 8Waveform.vwf.vht
+Z31 FWaveform.vwf.vht
 l0
 L32
 VlmDiDRMXIdQRh6iU1h5Jm1
 !s100 h5Pca=KOBm_TN^onbL[Mo2
-R13
+R12
 32
-Z23 !s110 1575466133
+Z32 !s110 1575466133
 !i10b 1
-R15
-Z24 !s90 -work|work|Waveform.vwf.vht|
-Z25 !s107 Waveform.vwf.vht|
+R28
+Z33 !s90 -work|work|Waveform.vwf.vht|
+Z34 !s107 Waveform.vwf.vht|
 !i113 1
+R17
 R18
-R19
 Atemplate_2019_arch
 R7
 R8
@@ -88,13 +178,13 @@ l51
 L34
 VfT0;]ll0>i4iUgVKnU`nQ2
 !s100 Lm9RM7e`04]7Fo7T_Ai2A1
-R13
+R12
 32
-R23
+R32
 !i10b 1
-R15
-R24
-R25
+R28
+R33
+R34
 !i113 1
+R17
 R18
-R19

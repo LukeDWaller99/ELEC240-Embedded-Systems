@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Template_2019 -c Template_2019 --vector_source="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform.vwf" --testbench_file="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Template_2019 -c Template_2019 --vector_source="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform2.vwf" --testbench_file="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Waveform2.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,8 +25,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue Dec 03 22:35:30 2019
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Template_2019 -c Template_2019 --vector_source="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform.vwf" --testbench_file="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Waveform.vwf.vht"
+    Info: Processing started: Sun Dec 15 20:43:28 2019
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Template_2019 -c Template_2019 --vector_source="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform2.vwf" --testbench_file="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Waveform2.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -51,14 +51,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue Dec 03 22:35:31 2019
+    Info: Processing started: Sun Dec 15 20:43:29 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/" Template_2019 -c Template_2019
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Template_2019.vho in folder "C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4645 megabytes
-    Info: Processing ended: Tue Dec 03 22:35:33 2019
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sun Dec 15 20:43:30 2019
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -81,7 +81,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:35:33 on Dec 03,2019
+# Start time: 20:43:31 on Dec 15,2019
 # vcom -work work Template_2019.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -92,36 +92,37 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package altera_primitives_components
 # -- Loading package cycloneive_atom_pack
 # -- Loading package cycloneive_components
-# -- Compiling entity Template_2019
-# -- Compiling architecture structure of Template_2019
+# -- Compiling entity multiplexer
+# -- Compiling architecture structure of multiplexer
 
-# End time: 22:35:33 on Dec 03,2019, Elapsed time: 0:00:00
+# End time: 20:43:31 on Dec 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:35:33 on Dec 03,2019
-# vcom -work work Waveform.vwf.vht 
 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:43:31 on Dec 15,2019
+# vcom -work work Waveform2.vwf.vht 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity Template_2019_vhd_vec_tst
-# -- Compiling architecture Template_2019_arch of Template_2019_vhd_vec_tst
-# End time: 22:35:33 on Dec 03,2019, Elapsed time: 0:00:00
+# -- Compiling entity multiplexer_vhd_vec_tst
+# -- Compiling architecture multiplexer_arch of multiplexer_vhd_vec_tst
+# End time: 20:43:31 on Dec 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Template_2019_vhd_vec_tst 
-# Start time: 22:35:33 on Dec 03,2019
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.multiplexer_vhd_vec_tst 
+# Start time: 20:43:31 on Dec 15,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.template_2019_vhd_vec_tst(template_2019_arch)
+# Loading work.multiplexer_vhd_vec_tst(multiplexer_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
 # Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.template_2019(structure)
+# Loading work.multiplexer(structure)
 # Loading altera.dffeas(vital_dffeas)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading ieee.std_logic_arith(body)
@@ -133,32 +134,32 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading cycloneive.cycloneive_ram_block(block_arch)
 # Loading cycloneive.cycloneive_ram_register(reg_arch)
 # Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
-# ** Warning: Design size of 157131 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 154965 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-# ** Warning: (vsim-8683) Uninitialized out port /template_2019_vhd_vec_tst/i1/altera_internal_jtag/tdo has no driver.
+# ** Warning: (vsim-8683) Uninitialized out port /multiplexer_vhd_vec_tst/i1/altera_internal_jtag/tdo has no driver.
 # This port will contribute value (U) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /template_2019_vhd_vec_tst/i1/altera_internal_jtag/tmsutap has no driver.
+# ** Warning: (vsim-8683) Uninitialized out port /multiplexer_vhd_vec_tst/i1/altera_internal_jtag/tmsutap has no driver.
 # This port will contribute value (U) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /template_2019_vhd_vec_tst/i1/altera_internal_jtag/tckutap has no driver.
+# ** Warning: (vsim-8683) Uninitialized out port /multiplexer_vhd_vec_tst/i1/altera_internal_jtag/tckutap has no driver.
 # This port will contribute value (U) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /template_2019_vhd_vec_tst/i1/altera_internal_jtag/tdiutap has no driver.
+# ** Warning: (vsim-8683) Uninitialized out port /multiplexer_vhd_vec_tst/i1/altera_internal_jtag/tdiutap has no driver.
 # This port will contribute value (U) to the signal network.
 # after#33
 
-# End time: 22:35:34 on Dec 03,2019, Elapsed time: 0:00:01
+# End time: 20:43:32 on Dec 15,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 5
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform.vwf...
+Reading C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/Waveform2.vwf...
 
 Reading C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Template_2019.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Template_2019_20191203223534.sim.vwf
+Writing the resulting VWF to C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim/Template_2019_20191215204332.sim.vwf
 
 Finished VCD to VWF conversion.
 
