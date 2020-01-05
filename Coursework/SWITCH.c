@@ -7,7 +7,7 @@
 
 int mode = 0;
 
-void init_blue_switch(void)
+void init_blue_switch(void)												//initialise the blue button
 {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;						//enable GPIOC clock
 	RCC->APB2ENR |= 0x4000;													//enable SYSCFG clock
@@ -20,7 +20,14 @@ void init_blue_switch(void)
 	EXTI->IMR 	|= 0x2000;													//unmasks EXTI13
 	EXTI->RTSR 	|= 0x2000;													//selects rising edge trigger for button
 }
-void EXTI15_10_IRQHandler (void) 
+
+/*
+handler for the interrupt of the blue button
+it handles what happens when the button is pressed
+ie. swapping between the different modes and 
+ 
+*/
+void EXTI15_10_IRQHandler (void) 									
 {
 	EXTI->PR |= 0x2000;															//clear the interrupt flag
 //animation = 0;

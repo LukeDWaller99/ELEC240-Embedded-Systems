@@ -45,7 +45,7 @@ void LCD_delay_us(unsigned int us)						//blocking delay for LCD, argument is ap
 		}
 	}
 }
-void wait_LCD_busy(void)                  		//wats for the LCD to be ready by checking the wait busy flag                                     
+void wait_LCD_busy(void)                  		//waits for the LCD to be ready by checking the wait busy flag                                     
 {                                        
 	int i = 1;																	//create an int i = 1
 	

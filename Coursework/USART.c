@@ -109,7 +109,7 @@ void mode_selector (char *USART_read)																				//selects the mode inpu
 }
 #define BUFFER_SIZE 255
 char transmit_buffer[BUFFER_SIZE];																					//create a char of buffer size equal to BUFFER_SIZE
-void myPrintf (const char* format,...) 																			//the elipses define dynamic linking or binding - this means there are variable numbers of argumetents
+void myPrintf (const char* format,...) 																			//the elipses define dynamic linking or binding - this means there are variable numbers of arguments
 {
 	va_list arguments;																												//list all of the arguments used 
 	va_start(arguments,format);																								//start using the va_list

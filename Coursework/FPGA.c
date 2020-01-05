@@ -6,7 +6,7 @@
 void init_FPGA (void)												//initialise the FPGA pins on the nucelo board
 {
 	//enable ports 
-	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOEEN;		//GPIO E clock enabled
+	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOEEN;				//GPIO E clock enabled
 	
 	//configure port pin functions for data line PE_15 (bit 0 )
 	GPIOE->MODER&=~(3u<<(2*15));							//clear pin function on GPIOE 	- data line PE_15
