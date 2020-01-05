@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "multiplexer")
-  (DATE "12/15/2019 20:33:44")
+  (DATE "01/05/2020 23:22:19")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")

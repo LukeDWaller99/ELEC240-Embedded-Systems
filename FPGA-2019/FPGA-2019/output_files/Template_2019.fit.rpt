@@ -1,5 +1,5 @@
 Fitter report for Template_2019
-Sun Dec 15 20:33:36 2019
+Sun Jan 05 23:22:10 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Dec 15 20:33:36 2019       ;
+; Fitter Status                      ; Successful - Sun Jan 05 23:22:10 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Template_2019                               ;
 ; Top-level Entity Name              ; multiplexer                                 ;
@@ -1364,7 +1364,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.26 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1373,10 +1373,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/output_files/Template_2019.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 6519 megabytes
-    Info: Processing ended: Sun Dec 15 20:33:37 2019
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 6521 megabytes
+    Info: Processing ended: Sun Jan 05 23:22:11 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+

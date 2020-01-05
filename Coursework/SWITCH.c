@@ -1,9 +1,10 @@
- #include "SWITCH.h"
+#include "SWITCH.h"
 #include "LED.h"
 #include "USART.h"
 #include "LCD.h"
 #include "delay.h"
 #include "ADC.h"
+#include "MORSE.h"
 
 int mode = 0;
 
@@ -30,7 +31,6 @@ ie. swapping between the different modes and
 void EXTI15_10_IRQHandler (void) 									
 {
 	EXTI->PR |= 0x2000;															//clear the interrupt flag
-//animation = 0;
 	blue_LED_off();																	//turns off the blue LED 
 	green_LED_off();																//turn off the green LED
 	red_LED_off(); 																	//turn off the red LED
@@ -47,6 +47,7 @@ void EXTI15_10_IRQHandler (void)
 				LCD_string("HOLD :"); 										//write HOLD: to the LCD
 				red_LED_off(); 														//turn off the red LED 
 				voltage_display();												//display the voltage of the ADC
+				morse_voltage();													//display the voltage in more code 
 				variable_delay(10000); 										//variable delay of 10s
 			}
 			LCD_CLR(); 																	//clear the LCD                                                                                                                                                                                                                    

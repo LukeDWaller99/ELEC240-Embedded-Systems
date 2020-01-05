@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Luke Waller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
 Emultiplexer
-Z1 w1576442610
+Z1 w1578266670
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -27,9 +27,9 @@ VblKdJ]hOi00eGdQP2SI[T1
 !s100 ^ImS1W22Y>iP6L;>Und]c1
 Z12 OV;C;10.5b;63
 32
-Z13 !s110 1576442611
+Z13 !s110 1578266671
 !i10b 1
-Z14 !s108 1576442611.000000
+Z14 !s108 1578266671.000000
 Z15 !s90 -work|work|Template_2019.vho|
 Z16 !s107 Template_2019.vho|
 !i113 1
@@ -60,46 +60,46 @@ R16
 R17
 R18
 Emultiplexer_vhd_vec_tst
-Z19 w1576442609
+Z19 w1578266668
 R7
 R8
 R0
-Z20 8Waveform2.vwf.vht
-Z21 FWaveform2.vwf.vht
+Z20 8FIANL_WAVEFORM.vwf.vht
+Z21 FFIANL_WAVEFORM.vwf.vht
 l0
 L31
 VThIB2Zz:STNi<:n>9S[^o2
 !s100 Zhl4JTW?zRAXS[SA8U0EJ2
 R12
 32
-R13
+Z22 !s110 1578266672
 !i10b 1
-R14
-Z22 !s90 -work|work|Waveform2.vwf.vht|
-Z23 !s107 Waveform2.vwf.vht|
+Z23 !s108 1578266672.000000
+Z24 !s90 -work|work|FIANL_WAVEFORM.vwf.vht|
+Z25 !s107 FIANL_WAVEFORM.vwf.vht|
 !i113 1
 R17
 R18
 Amultiplexer_arch
 R7
 R8
-Z24 DEx4 work 23 multiplexer_vhd_vec_tst 0 22 ThIB2Zz:STNi<:n>9S[^o2
+Z26 DEx4 work 23 multiplexer_vhd_vec_tst 0 22 ThIB2Zz:STNi<:n>9S[^o2
 l48
 L33
-Vg<c[]F>26a9:Q[;^Zk^R13
-!s100 n;h`a^Yk9JeD4bef?@5kl1
+V3SUJb5R`ac9_[KI[KURZ72
+!s100 cz@BUInnR6Y05>S`:^:Xd1
 R12
 32
-R13
-!i10b 1
-R14
 R22
+!i10b 1
 R23
+R24
+R25
 !i113 1
 R17
 R18
 Etemplate_2019
-Z25 w1575466131
+Z27 w1575466131
 R2
 R3
 R4
@@ -108,7 +108,7 @@ R6
 R7
 R8
 R9
-Z26 dC:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
+Z28 dC:/Users/ldwaller/OneDrive - University of Plymouth/Year Two/ELEC240/_XOURSEWORK/Coursework Keil/ELEC240/FPGA-2019/FPGA-2019/simulation/qsim
 R10
 R11
 l0
@@ -117,9 +117,9 @@ V3ZR4bAk<g1a4FHOcgT^S>0
 !s100 J47d]m6ZHVZ3zMiBVj@>a3
 R12
 32
-Z27 !s110 1575466132
+Z29 !s110 1575466132
 !i10b 1
-Z28 !s108 1575466132.000000
+Z30 !s108 1575466132.000000
 R15
 R16
 !i113 1
@@ -141,32 +141,32 @@ VccYln:M77DPHFI?e^kXS02
 !s100 9[fCHhYJVQN`JdoZ^?PPI2
 R12
 32
-R27
+R29
 !i10b 1
-R28
+R30
 R15
 R16
 !i113 1
 R17
 R18
 Etemplate_2019_vhd_vec_tst
-Z29 w1575466130
+Z31 w1575466130
 R7
 R8
-R26
-Z30 8Waveform.vwf.vht
-Z31 FWaveform.vwf.vht
+R28
+Z32 8Waveform.vwf.vht
+Z33 FWaveform.vwf.vht
 l0
 L32
 VlmDiDRMXIdQRh6iU1h5Jm1
 !s100 h5Pca=KOBm_TN^onbL[Mo2
 R12
 32
-Z32 !s110 1575466133
+Z34 !s110 1575466133
 !i10b 1
-R28
-Z33 !s90 -work|work|Waveform.vwf.vht|
-Z34 !s107 Waveform.vwf.vht|
+R30
+Z35 !s90 -work|work|Waveform.vwf.vht|
+Z36 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
@@ -180,11 +180,11 @@ VfT0;]ll0>i4iUgVKnU`nQ2
 !s100 Lm9RM7e`04]7Fo7T_Ai2A1
 R12
 32
-R32
-!i10b 1
-R28
-R33
 R34
+!i10b 1
+R30
+R35
+R36
 !i113 1
 R17
 R18
