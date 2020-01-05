@@ -4,35 +4,35 @@
 #include "USART.h"
 
 
-void custom_char_locked (void)
+void custom_char_locked (void) 								//create a custom locked padlock character for the LCD 
 {
-	unsigned char custom_char_5x8[] =
+	unsigned char custom_char_5x8[] = 					//create an array for the custom character defining the postions of the pixels on the LCD
 	{0x00, 0x0E, 0x11, 0x11, 0x1F, 0x1B, 0x1B, 0x1F}; 
-	for(int i =0; i <= 7; i++)
+	for(int i =0; i <= 7; i++) 									//runs through the for loop to output the custom character 
 	{
-		cmd_LCD(0x40+i);
-		variable_delay(10);
-		put_LCD(custom_char_5x8[i]);
-		variable_delay(10);
+		cmd_LCD(0x40+i);													//
+		variable_delay(10);												//variable delay of 10ms 
+		put_LCD(custom_char_5x8[i]);							//put the 'i'th value of the array onto the LCD display
+		variable_delay(10);												//variable delay of 10ms
 	}
-	cursor_set(16,1);
-	variable_delay(10);
-	put_LCD(0);
+	cursor_set(16,1);														//set the cursor postion column 16, row 1
+	variable_delay(10);													//variable delay of 10ms 
+	put_LCD(0);																	//set data on the bus 
 }
-void custom_char_unlocked (void)
+void custom_char_unlocked (void) 							//creat a custom unlocked padlock character for the LCD
 {
-		unsigned char custom_char_5x8[] =
+		unsigned char custom_char_5x8[] = 				//create an array for the custom character defining the postions of the pixels on the LCD
 	{0x0E, 0x11, 0x11, 0x10, 0x1F, 0x1B, 0x1B, 0x1F}; 
-	for(int i =0; i <= 8; i++)
+	for(int i =0; i <= 8; i++) 									//runs through the for loop to output the custom character 
 	{
-		cmd_LCD(0x40+i);
-		variable_delay(10);
-		put_LCD(custom_char_5x8[i]);
-		variable_delay(10);
+		cmd_LCD(0x40+i); 													//
+		variable_delay(10); 											//variable delay of 10ms
+		put_LCD(custom_char_5x8[i]); 							//put the 'i'th value of the array onto the LCD display
+		variable_delay(10); 											//variable delay of 10ms
 	}
-	cursor_set(16,1);                                                                                                                                                 
-	variable_delay(10);
-	put_LCD(0);
+	cursor_set(16,1);        										//set the cursor position column 16, row 1                                                                                                                                       
+	variable_delay(10);													//variable delay of 10ms 
+	put_LCD(0);																	//set data on the bus
 }
 void LCD_delay_us(unsigned int us)						//blocking delay for LCD, argument is approximate number of micro-seconds to delay
 {
@@ -173,6 +173,9 @@ void decimal_to_hex(int decimal)							//sends a hex number to the output of the
 }
 void init_LCD(void)														//intialises the LCD into 4 bit mode
 {
+	int i = 0;
+	while( i < 3)
+	{
 				SystemCoreClockUpdate();
 		RCC->AHB1ENR|=RCC_AHB1ENR_GPIODEN;				//enable LCD port clock
 	
@@ -201,6 +204,8 @@ void init_LCD(void)														//intialises the LCD into 4 bit mode
 	cmd_LCD(0x0F);															//Display on, Cursor blinking command
 	cmd_LCD(0x01);	 														//Clears the LCD
 	cmd_LCD(0x06);															//Entry mode, auto increment with no shift
+	i++;
+	}
 }
 void LCD_string (char *string)								//sends a string of data to the LCD display
 {
@@ -216,30 +221,30 @@ void LCD_proportional_bar (void)							//send a bar proportional to the input vo
 	unsigned int data_ADC; 											//create an unsigned int called data_ADC
 	data_ADC = read_ADC(); 												//map the value of read_ADC to data_ADC
 	unsigned int bar_value_array[16] = 
-		 {2, 		254, 	508,	762,
+		 {	 2,  254,  508,	 762,
 			1016,	1270,	1524,	1778,
 			2032,	2286,	2540,	2794,
 			3048,	3302,	3556,	3810}; 								// creates an array of 16 bytes with the values shown 	
-	cmd_LCD(LCD_LINE2);										//sets the cursor to the start of the second line on the LCD
+	cmd_LCD(LCD_LINE2);													//sets the cursor to the start of the second line on the LCD
 	for(int  c=0; c<16; c++) 										//for all the values of c between 0 and 16
 	{
 		if(data_ADC > bar_value_array[c]) 				//check if the value of data_ADC is greater than bar_value_array[c]
 		{
-			put_LCD('-');														//if the value is greater put a bar onto the LCD 
-			send_USART('-');
+			put_LCD('-');														//if value is greater put a bar onto the LCD 
+			send_USART('-');												//if value is greater put a bar onto the USART
 		}
 	}	
-	LCD_string("                ");	
+	LCD_string("                ");							//'clear' the bottom of the LCD screen, allowing the bar to be dynamic 
 }
-void cursor_set (int column, int row)
+void cursor_set (int column, int row)					//sets the cursor on the LCD 
 {
-	if (row == 1)
+	if (row == 1)																//if the row vaiable = 1
 	{
-		cmd_LCD((LCD_LINE1) + (column-1));
+		cmd_LCD((LCD_LINE1) + (column-1));				//move the cursor to the line 1 and (column - 1) position
 	}
-	else 
+	else 																				//if row  = 2
 	{
-		cmd_LCD((LCD_LINE2) + (column-1));
+		cmd_LCD((LCD_LINE2) + (column-1));				//move the cursor to the line 2 and (column - 1) position 
 	}
 
 }

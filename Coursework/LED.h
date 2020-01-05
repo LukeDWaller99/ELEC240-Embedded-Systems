@@ -22,3 +22,15 @@ void external_LED4_off		(void);
 void toggle_red_LED				(void);
 
 #endif
+
+
+/*
+Function: init_ADC
+Returns: void - nothing
+Arguments: void - nothing
+
+This function initialises the ADC. It does not rely on any
+other timers or peripherals. It enables the ADC on
+single conversion mode on Channel 2.
+Set to 12 bit resolution at default.
+*/
